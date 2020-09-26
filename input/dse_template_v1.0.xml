@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<DSEDokument version="1.0">
+    <Kapitel titel="" kommentar="Einleitung">
+        <Abschnitt titel="Datenschutzerklärung"><Text>Der Schutz Ihrer personenbezogenen Daten ist uns sehr wichtig. Damit sämtliche Datenverarbeitungsvorgänge auf unserer Webseite und in unseren Angeboten für Sie als Besucher und Nutzer (nachfolgend „Nutzer“ genannt) unserer Webseite transparent und nachvollziehbar sind, klären wir Sie in dieser Datenschutzerklärung über die Art, den Umfang und den Zweck der Verarbeitung Ihrer personenbezogenen Daten auf unserer Webseite auf. 
+        Sie können sich die Datenschutzerklärung speichern oder ausdrucken, indem Sie entweder in Ihrem Browser die Befehle „drucken“ oder „Seite speichern unter“ wählen oder die hier hinterlegte pdf-Version drucken oder speichern. Um die pdf-Version öffnen zu können, benötigen Sie ein spezielles Programm für pdf-Dateien (z. B. Adobe Reader).</Text>
+        </Abschnitt>
+        <Abschnitt titel="Erläuterung der Begriffe"><Text>Nachfolgend erläutern wir die Begriffe gemäß Art. 4 EU-Datenschutz-Grundverordnung (nachfolgend “DSGVO” genannt), die in der Datenschutzerklärung genannt werden:
+
+•	„Personenbezogene Daten“ (nachfolgend „Daten“ genannt) sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (im Folgenden „betroffene Person“ oder „Betroffener“) beziehen; eine Person ist identifizierbar, wenn sie direkt oder indirekt, insbesondere mittels Zuordnung zu bestimmten Kennungen oder Merkmalen identifiziert werden kann. Personenbezogene Daten sind daher z. B. Namen, Anschriften, E-Mail-Adresse, Berufsbezeichnung, Geburtsdatum, Telefonnummer, Nutzerverhalten, IP-Adresse, Standortdaten, genetische Daten, Gesundheitsdaten etc.
+•	„Verarbeitung“ ist jeder Vorgang in Bezug auf personenbezogene Daten, z. B. das Erheben, Erfassen, Organisieren, Ordnen, Speichern, Anpassen, Verändern, Auslesen, Abfragen, Verwenden, Offenlegen, Übermitteln, Verbreiten, Bereitstellen, Abgleichen, Verknüpfen, Einschränken, Löschen oder Vernichten von personenbezogenen Daten. 
+•	„Einschränkung der Verarbeitung“ ist die Markierung gespeicherter personenbezogener Daten mit dem Ziel, ihre künftige Verarbeitung einzuschränken.
+•	„Pseudonymisierung“ heißt, dass personenbezogene Daten in einer Weise verarbeitet werden, dass sie ohne Hinzuziehung zusätzlicher Informationen nicht mehr einem spezifischen Betroffenen zugeordnet werden können. Hierzu muss gewährleistet sein, dass die zusätzlichen Informationen gesondert aufbewahrt und die personenbezogenen Daten nicht einem Betroffenen zugewiesen werden.
+•	„Verantwortlicher“ ist eine natürliche Person, Unternehmen, Verein, Behörde, Einrichtung oder andere Stelle, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
+•	„Auftragsverarbeiter“ ist eine natürliche Person, Unternehmen, Verein, Behörde, Einrichtung oder andere Stelle, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet. 
+•	„Empfänger“ ist eine natürliche Person, Unternehmen, Verein, Behörde, Einrichtung oder andere Stelle, dem personenbezogene Daten offengelegt werden, unabhängig davon, ob es sich bei ihm um einen Dritten handelt oder nicht.  
+•	„Dritter“ ist eine natürliche Person, Unternehmen, Verein, Behörde, Einrichtung oder andere Stelle, außer dem Betroffenen, dem Verantwortlichen, dem Auftragsverarbeiter und den Personen, die unter der unmittelbaren Verantwortung des Verantwortlichen oder des Auftragsverarbeiters befugt sind, die personenbezogenen Daten zu verarbeiten;
+•	„Einwilligung“ der betroffenen Person ist jede freiwillige, in informierter Weise und unmissverständlich abgegebene Erklärung oder sonstige eindeutige bestätigende Handlung, mit der der Betroffene zu verstehen gibt, dass er im konkreten Fall mit der Verarbeitung der ihn betreffenden personenbezogenen Daten einverstanden ist.</Text>
+        </Abschnitt>
+    </Kapitel>
+    <Kapitel titel="Allgemeine Angaben">
+        <Abschnitt titel="Verantwortlicher"><Text>Verantwortlicher für die Verarbeitung personenbezogener Daten auf dieser Webseite ist:
+Firmenname:     {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[0]}
+Straße:         {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[1]}
+PLZ, Ort:       {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[2]}
+Land:           {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[3]}
+Tel:            {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[4]}
+Fax:            {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[5]}
+Email:          {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[6]}
+Webseite:       {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[7]}
+Link Impressum: {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[8]}</Text>
+        </Abschnitt>
+        <Abschnitt titel="Datenschutzanfragen"><Text>Sämtliche Anfragen zur Verarbeitung Ihrer personenbezogenen Daten oder die Ausübung Ihrer im Folgenden genannten Rechte richten Sie bitte per E-Mail, Fax oder Post an folgende Adresse:
+Firmenname: {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[0]}
+Straße:     {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[1]}
+PLZ, Ort:   {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[2]}
+Land:       {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[3]}
+Tel:        {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[4]}
+Fax:        {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[5]}
+Email:      {self.checklistObject.elementList["verantwortlicher"]["adressTabelle"]["adresse"].split("\n")[6]}</Text>
+        </Abschnitt>
+        <Abschnitt titel="Datenschutzbeauftragter">
+<Text>Die Kontaktdaten unseres Datenschutzbeauftragten sind:
+Vorname, Nachname: {["dsb"]["adressTabelle"]["adresse"].split("\n")[0]}
+Firmenname: {self.checklistObject.elementList["dsb"]["adressTabelle"]["adresse"].split("\n")[2]}
+Straße:     {self.checklistObject.elementList["dsb"]["adressTabelle"]["adresse"].split("\n")[3]}
+PLZ, Ort:   {self.checklistObject.elementList["dsb"]["adressTabelle"]["adresse"].split("\n")[4]}
+Land:       {self.checklistObject.elementList["dsb"]["adressTabelle"]["adresse"].split("\n")[5]}
+Tel:        {self.checklistObject.elementList["dsb"]["adressTabelle"]["adresse"].split("\n")[6]}</Text>
+        </Abschnitt>
+    </Kapitel>
+    <Kapitel titel="Allgemeine Hinweise zur Verarbeitung personenbezogener Daten">
+        <Abschnitt titel="Arten der verarbeiteten Daten">
+<Text>Wir erheben und verarbeiten auf unserer Webseite {self.checklistObject.getKeyList("host","datenliste")}</Text>
+        </Abschnitt>
+        <Abschnitt titel="Kategorien betroffener Personen">
+<Text>Die von der Verarbeitung personenbezogener Daten Betroffenen sind alle Besucher und Nutzer unserer Webseite.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Zweck der Verarbeitung">
+<Text>Wir erheben und verarbeiten die personenbezogenen Daten der Nutzer unserer Webseite, </Text>
+<Text cond="self.compareElementValue(self.checklistObject.elementList['host']['datenliste'], 'Kontaktdaten', True)">um mit Ihnen zu kommunizieren und sie zu informieren (z. B. Kontakt- und sonstige Anfragen, Newsletter),</Text>        
+<Text cond="self.compareElementValue(self.checklistObject.elementList['host']['datenliste'], 'Nutzungsdaten', True, False) and self.compareElementValue(self.checklistObject.elementList['host']['datenliste'], 'Meta- und Kommunikationsdaten von Kunden', True, False)">um Statistiken, Reichweitenmessung und Analysen durchzuführen (z. B. mit Marketing- und Analysetools),</Text>
+<Text>damit wir Inhalte und Funktionen besser gestalten und optimieren können, um die Webseite technisch zu verwalten, zu optimieren und Sicherheitslücken zu schließen.</Text>        
+        </Abschnitt>
+        <Abschnitt titel="Rechtsgrundlagen für die Verarbeitung personenbezogener Daten">
+<Text>Wir verarbeiten personenbezogene Daten nur, wenn wir aufgrund einer Rechtsgrundlage hierzu berechtigt sind. Im Folgenden werden wir diese Rechtsgrundlagen einzeln benennen. Ansonsten sind wir immer dann berechtigt personenbezogene Daten zu verarbeiten, wenn der Betroffene eingewilligt hat (s. Art. 6 Abs. 1 lit. a, Art. 7 DSGVO), wenn wir verpflichtet sind, vertragliche oder vorvertragliche Pflichten zu erfüllen (s. Art. 6 Abs. 1 lit. b DSGVO), wenn wir rechtliche Verpflichtungen erfüllen müssen (s. Art. 6 Abs. 1 lit. c DSGVO), wenn wir lebenswichtige Interessen eines Betroffenen oder einer anderen natürlichen Person erfüllen müssen (s. Art. 6 Abs. 1 lit. d DSGVO), wenn wir Aufgaben wahrnehmen, die im öffentlichen Interesse oder in Ausübung öffentlicher Gewalt liegen (s. Art. 6 Abs. 1 lit. e DSGVO) oder wenn wir unsere berechtigten Interessen wahren (s. Art. 6 Abs. 1 lit. f DSGVO).</Text>
+        </Abschnitt>
+        <Abschnitt titel="Empfänger von personenbezogenen Daten">
+<Text>Wir übermitteln personenbezogene Daten teilweise an Auftragsverarbeiter oder andere Dritte (z. B. Zahlungsdienstleister, Hostingagenturen, Newsletterdienste, Versandunternehmen etc.), mit denen wir zusammen arbeiten. Hierzu sind wir berechtigt, wenn der Betroffene hierin eingewilligt hat (s. Art. 6 Abs. 1 lit. a, Art. 7 DSGVO), wenn wir damit vertragliche oder vorvertragliche Pflichten erfüllen (s. Art. Art. 6 Abs. 1 lit. b DSGVO), wenn wir damit eine rechtliche Verpflichtung erfüllen (s. Art. 6 Abs. 1 lit. c DSGVO), wenn wir lebenswichtige Interessen eines Betroffenen oder einer anderen natürlichen Person erfüllen müssen (s. Art. 6 Abs. 1 lit. d DSGVO), wenn wir Aufgaben wahrnehmen, die im öffentlichen Interesse oder in Ausübung öffentlicher Gewalt liegen (s. Art. 6 Abs. 1 lit. e DSGVO) oder wenn wir unsere berechtigten Interessen wahren (s. Art. 6 Abs. 1 lit. f DSGVO). Mit Auftragsverarbeitern schließen wir eine sog. Auftragsverarbeitungsvereinbarung gemäß Art. 28 DSGVO, wonach sich diese ebenfalls zur Einhaltung des Datenschutzes verpflichten.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Verarbeitung von personenbezogenen Daten in Drittländern">
+<Text>Sofern Daten von uns in ein Drittland übermittelt werden, weil wir dort z. B. Dienstleister beauftragen, sind wir hierzu berechtigt, wenn der Betroffene hierin eingewilligt hat (s. Art. 6 Abs. 1 lit. a, Art. 7 DSGVO), wenn wir damit vertragliche oder vorvertragliche Pflichten erfüllen (s. Art. Art. 6 Abs. 1 lit. b DSGVO), wenn wir damit eine rechtliche Verpflichtung erfüllen (s. Art. 6 Abs. 1 lit. c DSGVO), wenn wir lebenswichtige Interessen eines Betroffenen oder einer anderen natürlichen Person erfüllen müssen (s. Art. 6 Abs. 1 lit. d DSGVO), wenn wir Aufgaben wahrnehmen, die im öffentlichen Interesse oder in Ausübung öffentlicher Gewalt liegen (s. Art. 6 Abs. 1 lit. e DSGVO) oder wenn wir unsere berechtigten Interessen wahren (s. Art. 6 Abs. 1 lit. f DSGVO). Als Drittland gilt jedes Land außerhalb der Europäischen Union (EU) oder des Europäischen Wirtschaftsraums (EWR). Bei der Übermittlung von Daten in Drittländer achten wir auf die Einhaltung der Art. 44 ff. DSGVO, auf bestehende Garantien oder Feststellungen der EU über ein angemessenes  Datenschutzniveau im Drittland, sowie auf den Abschluss ggfs. erforderlicher Vereinbarungen, z. B. Standardvertragsklauseln.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Kontaktaufnahme">
+<Text>Bei Ihrer Kontaktaufnahme mit uns per E-Mail, Fax, Telefon oder Post werden die von Ihnen mitgeteilten Daten (z. B. E-Mail-Adresse, Name, Telefonnummer, Faxnummer, Adresse) von uns verarbeitet, um Ihre Anfragen zu beantworten. Hierzu sind wir gemäß Art. 6 Abs. 1 lit. b DSGVO berechtigt. Die Daten der Nutzer können zudem in einem Customer-Relationship-Management System ("CRM System") oder in vergleichbaren Datenbanken gespeichert werden.
+Wir löschen sämtliche Daten, nachdem die Speicherung nicht mehr erforderlich ist, oder schränken die Verarbeitung ein, falls gesetzliche Aufbewahrungspflichten bestehen. Die Erforderlichkeit der Aufbewahrung der Daten wird spätestens alle zwei Jahre überprüft.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Kontakt-/Rückrufformular">
+<Text>Bei Ihrer Kontaktaufnahme mit uns mittels unseres Kontakt-/Rückrufformulars werden die von Ihnen mitgeteilten Daten (z. B. E-Mail-Adresse, Name, Telefonnummer, Faxnummer, Adresse) von uns verarbeitet, um Ihre Anfragen zu beantworten. Hierzu sind wir gemäß Art. 6 Abs. 1 lit. b, f DSGVO berechtigt. Die Daten der Nutzer können zudem in einem Customer-Relationship-Management System ("CRM System") oder in vergleichbaren Datenbanken gespeichert werden.
+
+Die Mindestdaten, die Sie uns übermitteln müssen, damit wir Ihre Anfragen bearbeiten können, ergeben sich als Pflichtfelder aus dem Formular. Weitere Daten können Sie optional übermitteln.
+Die Übermittlung Ihrer Daten erfolgt verschlüsselt nach dem Stand der Technik.
+
+Wir löschen sämtliche Daten, nachdem die Speicherung nicht mehr erforderlich ist, oder schränken die Verarbeitung ein, falls gesetzliche Aufbewahrungspflichten bestehen. Die Erforderlichkeit der Aufbewahrung der Daten wird spätestens alle zwei Jahre überprüft.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Löschung/Sperrung Ihrer personenbezogenen Daten">
+<Text>Wir speichern Ihre personenbezogenen Daten nur so lange, wie dies zur Erreichung der hier genannten Zwecke erforderlich ist. Darüber hinaus speichern wir Ihre Daten nur, wenn gesetzliche Aufbewahrungspflichten dies erfordern (z. B. 6 Jahre gemäß § 257 Abs. 1 HGB und 10 Jahre gemäß § 147 Abs. 1 AO für Handels- und Geschäftsbriefe, Rechnungen, Angebote etc.). Nach Fortfall des jeweiligen Zweckes bzw. Ablauf dieser Fristen werden die Daten entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht gemäß Art. 17, 18 DSGVO.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Erhebung von Zugriffsdaten und Webserver-Logfiles">
+<Text>Wir erheben auf Grundlage unserer berechtigten Interessen an der Analyse, Optimierung und dem wirtschaftlichen Betrieb unserer Webseite gemäß Art. 6 Abs. 1 lit. f DSGVO über jeden Zugriff auf unsere Webseite (sog. Webserver-Logfiles) die nachfolgenden Daten:
+{self.formatList(self.checklistObject.getKeyList("host","zweck"))}</Text>
+<Text>Die Daten werden für statistische Auswertungen zum Zweck des Betriebs, der Sicherheit und der Optimierung der Webseite verwendet. Die Daten werden aus Sicherheitsgründen (z. B. für die Aufklärung von Betrugs-/Missbrauchsfällen) kurzfristig/für die Dauer von ………………. gespeichert. Die IP-Adresse wird ausschließlich anonymisiert gespeichert. Ist eine längere Aufbewahrung zu Beweiszwecken erforderlich, werden diese nach der endgültigen Klärung der Angelegenheit gelöscht.</Text>
+</Abschnitt>
+
+    </Kapitel>
+    
+</DSEDokument>
