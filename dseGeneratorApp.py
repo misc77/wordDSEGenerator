@@ -152,7 +152,8 @@ class DSEGeneratorApp(wx.Frame):
             checklist_doc = parseChecklist(self.generator.checklistFile)
             self.generator.checklistObject = checklist_doc
             if checklist_doc.wordVersion != None:
-                self.version_text.SetLabelText(checklist_doc.wordVersion.strip("',/\n"))
+                print("text to print: " + checklist_doc.wordVersion.strip("\n"))
+                self.version_text.SetLabelText(checklist_doc.wordVersion.strip("\n"))
                 self.version_text_xml.SetLabelText(checklist_doc.xmlVersion)
                 self.status_text.SetLabelText("Checklist Document successfully processed!")      
                 self.generate_button.Enable()          
@@ -212,7 +213,7 @@ class DSEGeneratorApp(wx.Frame):
             if dlg.ShowModal() == wx.ID_OK:
                 path = dlg.GetPath()
                 if self.doc_generator.saveDocument(self.version_text_xml.GetLabelText(), path):
-                    self.status_text.SetLabelText("Checklist Document saved successfully!")      
+                    self.status_text.SetLabelText("DSE Document saved successfully!")      
             else:
                 wx.MessageBox("Warning! DSE Document hasn't been saved!", caption="Warning!")
         else:

@@ -7,6 +7,7 @@ import os
 import xml.etree.ElementTree as ET
 import const
 import logger
+import datetime
 
 from docx import Document
 from resources import Resources
@@ -137,17 +138,29 @@ class DocGenerator:
             text = self.evaluateFormular(text)
         return text
 
+    def processTable(self, table_elem):  #TODO
+        text = table_elem.text
+        return text
+
 
     def processParagraph(self, paragraph):
+        is_first = True
         titel = paragraph.attrib.get(const.DSEDOC_ATTRIB_TITLE)
-        if titel != "":
-            self.dseDocument.add_heading(titel, level=3)
         text = paragraph.text
         if text != "":
             for elem in paragraph:
                 if elem.tag == const.DSEDOC_TAG_TEXT:
-                    text = self.processText(elem)                
+                    text = self.processText(elem)
+                elif elem.tag == const.DSEDOC_TAG_TABLE:
+                    text = self.processTable(elem)
+                
+                if text != "": 
+                    if is_first == True and titel != "":
+                        self.dseDocument.add_heading(titel, level=3)
                     self.dseDocument.add_paragraph(text)
+                    is_first = False
+                    
+                        
 
 
     def processChapter(self, chapter):

@@ -1,216 +1,228 @@
 <?xml version="1.0" ?>
-<checkliste xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+<checkliste xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
    <titel wordType="table" tabelle="1">
-		<intro zeile="1" ></intro>
-		<titel zeile="2" ></titel>
-		<version zeile="3" spalte="1"></version>
-		<address zeile="4" spalte="1"></address>
+		<intro></intro>
+		<titel></titel>
+		<version spalte="1"></version>
+		<addresse spalte="1"></addresse>
    </titel>
    <verantwortlicher wordType="table" tabelle="2">
-		<titel zeile="1" wordType="text"></titel>
-		<adresse zeile="2" spalte="2" wordType="text"> </adresse>
+		<titel wordType="text"></titel>
+		<adresse spalte="2" wordType="text"> </adresse>
    </verantwortlicher>
    <dsb wordType="table" tabelle="3">
-		<titel zeile="1" wordType="text"></titel>
-		<hinweis zeile="2" wordType="text"></hinweis>
-		<adresse zeile="3" spalte="2" wordType="text"></adresse>
+		<titel wordType="text"></titel>
+		<hinweis wordType="text"></hinweis>
+		<adresse spalte="2" wordType="text"></adresse>
    </dsb>
    <host wordType="table" tabelle="4">
-		<titel zeile="1" wordType="text"/>
-		<hinweis zeile="2" wordType="text"/>
-		<name zeile="3" spalte="2" wordType="text"/>
-		<avv zeile="4" wordType="yesnolist"/>
+		<titel wordType="text"/>
+		<hinweis wordType="text"/>
+		<name spalte="2" wordType="text"/>
+		<avv wordType="yesnolist"/>
    </host>
    <zugriffsdaten wordType="table" tabelle="5">
-  		<titel zeile="1" wordType="text"/>
-        <hinweis zeile="2" wordType="text"/>
-		<inhalt zeile="3" wordType="checkboxlist"/>
-		<anonymisiert zeile="4" wordType="yesnolist"/>
-		<dauer zeile="5" wordType="text"/> 
+  		<titel wordType="text"/>
+        <hinweis wordType="text"/>
+		<inhalt wordType="checkboxlist"/>
+		<anonymisiert wordType="yesnolist"/>
+		<dauer wordType="text"/> 
    </zugriffsdaten>
    <matomo wordType="table" tabelle="6">
-		<titel zeile="1" wordType="text"/>
-		<matomo zeile="2" wordType="yesnolist"/>
-		<anonymizeVisitorsIP zeile="3" wordType="checkboxlist"/>
-		<doNotTrack zeile="4" wordType="checkboxlist"/>
+		<titel wordType="text"/>
+		<matomo wordType="yesnolist"/>
+		<anonymizeVisitorsIP wordType="checkboxlist"/>
+		<doNotTrack wordType="checkboxlist"/>
    </matomo>
    <googleanalytics wordType="table" tabelle="7">
-		<verwendung zeile="1" wordType="yesnolist"/>
-		<browserAddon zeile="2" wordType="checkboxlist"/>
+		<verwendung wordType="yesnolist"/>
+		<optOutLink wordType="text"/>
+        <ipAnonymisierung wordType="yesnolist"/>
    </googleanalytics>
    <googleuniversal wordType="table" tabelle="8">
-		<hinweis zeile="1" wordType="text"/>
-		<verwendung zeile="2" wordType="yesnolist"/>
-		<browserAddon zeile="3" wordType="checkboxlist"/>
+		<hinweis wordType="text"/>
+		<verwendung wordType="yesnolist"/>
+		<browserAddon wordType="checkboxlist"/>
    </googleuniversal>
    <etracker wordType="table" tabelle="9">
-		<verwendung zeile="1" wordType="yesnolist"/>
-		<cookies zeile="2" wordType="yesnolist"/>
-		<anonymisiert zeile="3" wordType="checkboxlist"/>
+		<verwendung wordType="yesnolist"/>
+		<cookies wordType="yesnolist"/>
+		<anonymisiert wordType="checkboxlist"/>
    </etracker>
    <adobeanalytics wordType="table" tabelle="10">
-  		<verwendung zeile="1" wordType="yesnolist"/>
-		<browserAddon zeile="2" wordType="yesnolist"/>
+  		<verwendung wordType="yesnolist"/>
+		<browserAddon wordType="yesnolist"/>
    </adobeanalytics>
    <wiredminds wordType="table" tabelle="11">
-		<verwendung zeile="1" wordType="yesnolist"/>
-		<browserAddon zeile="2" wordType="yesnolist"/>
+		<verwendung wordType="yesnolist"/>
+		<browserAddon wordType="yesnolist"/>
    </wiredminds>
    <szm wordType="table" tabelle="12">
-		<verwendung zeile="1" wordType="yesnolist"/>
-		<applikation zeile="2" wordType="yesnolist"/>
-		<browserAddon zeile="3" wordType="yesnolist"/>
+		<verwendung wordType="yesnolist"/>
+		<applikation wordType="yesnolist"/>
+		<browserAddon wordType="yesnolist"/>
    </szm>
    <wordpressjetpack wordType="table" tabelle="13">
-        <hinweis zeile="1" wordType="text"/>
-		<verwendung zeile="2" wordType="yesnolist"/>
-		<browserAddon zeile="3" wordType="yesnolist"/>
+        <hinweis wordType="text"/>
+		<verwendung wordType="yesnolist"/>
+		<browserAddon wordType="yesnolist"/>
    </wordpressjetpack>
    <remarketing wordType="table" tabelle="14">
-		<tools zeile="1" wordType="checkboxlist"/>
-		<optout zeile="2" wordType="yesnolist"/>
+		<tools wordType="checkboxlist"/>
+		<optout wordType="yesnolist"/>
    </remarketing>
    <facebookpixel wordType="table" tabelle="15">
-		<verwendung zeile="1" wordType="yesnolist"/>
-		<customAudience zeile="2" wordType="yesnolist"/>
-		<conversionTracking zeile="3" wordType="yesnolist"/>
+		<verwendung wordType="yesnolist"/>
+		<customAudience wordType="yesnolist"/>
+		<conversionTracking wordType="yesnolist"/>
    </facebookpixel>
    <hinweis wordType="table" tabelle="16">
-        <hinweis zeile="1" wordType="text"/>
+        <hinweis wordType="text"/>
    </hinweis>
    <kontaktformular wordType="table" tabelle="17">
-        <hinweis zeile="1" wordType="text"/>
-		<verwendung zeile="2" wordType="yesnolist"/>
-		<daten zeile="3" wordType="checkboxlist"/>
-        <dauer zeile="4" wordType="text"/>
-        <speicherort zeile="5" wordType="checkboxlist"/>
-        <weiterleitung zeile="6" wordType="text"/>
-        <zweck zeile="7" wordType="checkboxlist"/>
-        <verschluesselung zeile="8" wordType="text"/>
+        <hinweis wordType="text"/>
+		<verwendung wordType="yesnolist"/>
+		<daten wordType="checkboxlist"/>
+        <dauer wordType="text"/>
+        <speicherort wordType="checkboxlist"/>
+        <weiterleitung wordType="yesnolist"/>
+        <dritte wordType="text"/>
+        <zweck wordType="checkboxlist"/>
+        <verschluesselung wordType="yesnolist"/>
+        <technik wordType="text"/>
    </kontaktformular>
    <newsletterformular wordType="table" tabelle="18">
-        <hinweis zeile="1" wordType="text"/>
-		<verwendung zeile="2" wordType="yesnolist"/>
-		<daten zeile="3" wordType="checkboxlist"/>
-		<speicherdauer zeile="4" wordType="text"/>
-		<weiterleitung zeile="5" wordType="yesnolist"/>
-        <inhalt zeile="6" wordType="checkboxlist"/>
-		<frequenz zeile="7" wordType="text"/>
-		<opt-in zeile="8" wordType="yesnolist"/>
-		<abmeldelink zeile="9" wordType="checkboxlist"/>
-		<widerrufsrecht zeile="10" wordType="yesnolist"/>
-		<versand zeile="11" wordType="yesnolist"/>
-        <adv zeile="12" wordType="yesnolist"/>
-		<aenderungsinfo zeile="13" wordType="checkboxlist"/>
-        <verschluesselung zeile="14" wordType="text"/>
-        <klicks zeile="15" wordType="yesnolist"/>
-        <daten zeile="16" wordType="checkboxlist"/>
-        <anonymisiert zeile="17" wordType="checkboxlist"/>
+        <hinweis wordType="text"/>
+		<verwendung wordType="yesnolist"/>
+		<daten wordType="checkboxlist"/>
+		<speicherdauer wordType="text"/>
+		<weiterleitung wordType="yesnolist"/>
+        <dritte wordType="text"/>
+        <inhalt wordType="checkboxlist"/>
+		<frequenz wordType="text"/>
+		<opt-in wordType="yesnolist"/>
+		<abmeldelink wordType="checkboxlist"/>
+		<widerrufsrecht wordType="yesnolist"/>
+		<programm wordType="yesnolist"/>
+        <name wordType="text"/>
+        <adv wordType="yesnolist"/>
+		<aenderungsinfo wordType="checkboxlist"/>
+        <verschluesselung wordType="yesnolist"/>
+        <technik wordType="text"/>
+        <klicks wordType="yesnolist"/>
+        <daten wordType="checkboxlist"/>
+        <anonymisiert wordType="checkboxlist"/>
     </newsletterformular>
     <spende wordType="table" tabelle="19">
-        <hinweis zeile="1" wordType="text"/>
-		<bankdaten zeile="2" wordType="yesnolist"/>
-        <formular zeile="3" wordType="yesnolist"/>
-        <daten zeile="4" wordType="checkboxlist"/>
-        <moeglichkeiten zeile="5" wordType="checkboxlist"/>
-        <moeglichkeitenDaten zeile="6" wordType="checkboxlist"/>
-        <dauer zeile="7" wordType="text"/>
-        <dritte zeile="8" wordType="text"/>
-        <verschluesselung zeile="9" wordType="text"/>
+        <hinweis wordType="text"/>
+		<bankdaten wordType="yesnolist"/>
+        <formular wordType="yesnolist"/>
+        <daten wordType="checkboxlist"/>
+        <moeglichkeiten wordType="checkboxlist"/>
+        <moeglichkeitenDaten wordType="checkboxlist"/>
+        <dauer wordType="text"/>
+        <dritte wordType="text"/>
+        <verschluesselung wordType="text"/>
     </spende>
     <gewinnspiele wordType="table" tabelle="20">
-        <hinweis zeile="1" wordType="text"/>
-        <verwendung zeile="2" wordType="yesnolist"/>
-        <art zeile="3" wordType="text"/>
-		<daten zeile="4" wordType="checkboxlist"/>
-        <bekanntmachung zeile="5" wordType="text"/>
-        <veroeffentlichung zeile="6" wordType="text"/>
-        <benachrichtigung zeile="7" wordType="text"/>
-        <dauer zeile="8" wordType="text"/>
-        <weiterleitung zeile="9" wordType="text"/>
-        <erhebung zeile="10" wordType="text"/>
-        <versand zeile="11" wordType="text"/>
-        <optin zeile="12" wordType="checkboxlist"/>
-        <verschluesselung zeile="13" wordType="text"/>
+        <hinweis wordType="text"/>
+        <verwendung wordType="yesnolist"/>
+        <art wordType="text"/>
+		<daten wordType="checkboxlist"/>
+        <bekanntmachung wordType="text"/>
+        <veroeffentlichung wordType="text"/>
+        <benachrichtigung wordType="text"/>
+        <dauer wordType="text"/>
+        <weiterleitung wordType="text"/>
+        <erhebung wordType="text"/>
+        <versand wordType="text"/>
+        <optin wordType="checkboxlist"/>
+        <verschluesselung wordType="text"/>
     </gewinnspiele>
     <blog wordType="table" tabelle="21">
-        <hinweis zeile="1" wordType="text"/>
-        <verwendung zeile="2" wordType="yesnolist"/>
-        <datenErhebung zeile="3" wordType="checkboxlist"/>
-        <datenSpeicherung zeile="4" wordType="checkboxlist"/>
-        <dauer zeile="5" wordType="text"/>
-        <weiterleitung zeile="6" wordType="text"/>
-        <erhebung zeile="7" wordType="text"/>
-        <abonnement zeile="8" wordType="yesnolist"/>
-        <optin zeile="9" wordType="checkboxlist"/>
-        <verschluesselung zeile="10" wordType="text"/>
+        <hinweis wordType="text"/>
+        <verwendung wordType="yesnolist"/>
+        <datenErhebung wordType="checkboxlist"/>
+        <datenSpeicherung wordType="checkboxlist"/>
+        <dauer wordType="text"/>
+        <weiterleitung wordType="text"/>
+        <erhebung wordType="text"/>
+        <abonnement wordType="yesnolist"/>
+        <optin wordType="checkboxlist"/>
+        <verschluesselung wordType="text"/>
     </blog>
     <disqus wordType="table" tabelle="22">
-        <verwendung zeile="1" wordType="yesnolist"/>
-        <dauer zeile="2" wordType="text"/>
-        <weiterleitung zeile="3" wordType="text"/>
-        <erhebung zeile="4" wordType="text"/>
-        <optin zeile="5" wordType="checkboxlist"/>
-        <verschluesselung zeile="6" wordType="text"/>
+        <verwendung wordType="yesnolist"/>
+        <dauer wordType="text"/>
+        <weiterleitung wordType="text"/>
+        <erhebung wordType="text"/>
+        <optin wordType="checkboxlist"/>
+        <verschluesselung wordType="text"/>
     </disqus>
     <bewerberportal wordType="table" tabelle="23">
-        <hinweis zeile="1" wordType="text"/>
-        <unterseite zeile="2" wordType="yesnolist"/>
-        <onlineformular zeile="3" wordType="checkboxlist"/>
-        <daten zeile="4" wordType="checkboxlist"/>
-        <sensibleDaten zeile="5" wordType="text"/>
-        <dauer zeile="6" wordType="text"/>
-        <weiterleitung zeile="7" wordType="text"/>
-        <optin zeile="8" wordType="checkboxlist"/>
-        <talentpool zeile="9" wordType="yesnolist"/>
-        <verschluesselung zeile="10" wordType="text"/>
+        <hinweis wordType="text"/>
+        <unterseite wordType="yesnolist"/>
+        <onlineformular wordType="checkboxlist"/>
+        <daten wordType="checkboxlist"/>
+        <sensibleDaten wordType="yesnolist"/>
+        <details wordType="text"/>
+        <dauer wordType="text"/>
+        <weiterleitung wordType="yesnolist"/>
+        <dritte wordType="text"/>
+        <optin wordType="checkboxlist"/>
+        <talentpool wordType="yesnolist"/>
+        <verschluesselung wordType="yesnolist"/>
+        <technik wordType="text"/>
     </bewerberportal>
     <webshop wordType="table" tabelle="24">
-        <hinweis zeile="1" wordType="text"/>
-        <verwendung zeile="2" wordType="yesnolist"/>
-        <gast zeile="3" wordType="yesnolist"/>
-        <datenErhebung zeile="4" wordType="checkboxlist"/>
-        <kundenaccount zeile="5" wordType="yesnolist"/>
-        <kundendaten zeile="6" wordType="checkboxlist"/>
-        <sensibleDaten zeile="7" wordType="text"/>
-        <dauer zeile="8" wordType="text"/>
-        <weiterleitung zeile="9" wordType="checkboxlist"/>
-        <datenDritter zeile="10" wordType="checkboxlist"/>
-        <verschluesselung zeile="11" wordType="text"/>
+        <hinweis wordType="text"/>
+        <verwendung wordType="yesnolist"/>
+        <gast wordType="yesnolist"/>
+        <datenErhebung wordType="checkboxlist"/>
+        <kundenaccount wordType="yesnolist"/>
+        <kundendaten wordType="checkboxlist"/>
+        <sensibleDaten wordType="text"/>
+        <dauer wordType="text"/>
+        <weiterleitung wordType="checkboxlist"/>
+        <datenDritter wordType="checkboxlist"/>
+        <verschluesselung wordType="text"/>
     </webshop>
     <sonstigeregistrierung wordType="table" tabelle="25">
-        <hinweis zeile="1" wordType="text"/>
-		<sonstigeregistrierung zeile="2" wordType="yesnolist"/>
-		<art zeile="3" wordType="text"/>
-		<erforderlich zeile="4" wordType="text"/>
-		<daten zeile="5" wordType="checkboxlist"/>
-		<sonstigedaten zeile="6" wordType="checkboxlist"/>
-		<speicherdauer zeile="7" wordType="text"/>
-		<weiterleitung zeile="8" wordType="text"/>
-		<aenderung zeile="9" wordType="yesnolist"/>
-		<optin zeile="10" wordType="yesnolist"/>
-		<loeschung zeile="11" wordType="yesnolist"/>
-		<verschluesselung zeile="12" wordType="text"/>
-		<aenderungsinfo zeile="13" wordType="checkboxlist"/>
+        <hinweis wordType="text"/>
+		<sonstigeregistrierung wordType="yesnolist"/>
+		<art wordType="text"/>
+		<erforderlich wordType="text"/>
+		<daten wordType="checkboxlist"/>
+		<sonstigedaten wordType="checkboxlist"/>
+		<speicherdauer wordType="text"/>
+		<weiterleitung wordType="text"/>
+		<aenderung wordType="yesnolist"/>
+		<optin wordType="yesnolist"/>
+		<loeschung wordType="yesnolist"/>
+		<verschluesselung wordType="yesnolist"/>
+        <technik wordType="text"/>
+		<aenderungsinfo wordType="checkboxlist"/>
     </sonstigeregistrierung>
     <zahlungsdienstleister wordType="table" tabelle="26">
-        <anbieter zeile="1" wordType="checkboxlist"/>
+        <anbieter wordType="checkboxlist"/>
     </zahlungsdienstleister>
     <amazonPartnerlinks wordType="table" tabelle="27">
-        <programm zeile="1" wordType="checkboxlist"/>
+        <programm wordType="checkboxlist"/>
     </amazonPartnerlinks>
     <sonstigeTools wordType="table" tabelle="28">
-        <tools zeile="1" wordType="checkboxlist"/>
+        <tools wordType="checkboxlist"/>
     </sonstigeTools>
     <datentransferAusland wordType="table" tabelle="29">
-        <daten zeile="1" wordType="checkboxlist"/>
+        <daten wordType="checkboxlist"/>
+        <verschluesselung wordType="yesnolist"/>
+        <technik wordType="text"/>
     </datentransferAusland>
     <socialMedia wordType="table" tabelle="30">
-        <hinweis zeile="1" wordType="text"/>
-        <praesenzen zeile="2" wordType="checkboxlist"/>
-        <plugin zeile="3" wordType="checkboxlist"/>
-        <shariff zeile="4" wordType="yesnolist"/>
-        <buttons zeile="5" wordType="yesnolist"/>
-        <buttonsShariff zeile="6" wordType="yesnolist"/>
+        <hinweis wordType="text"/>
+        <praesenzen wordType="checkboxlist"/>
+        <plugin wordType="checkboxlist"/>
+        <shariff wordType="yesnolist"/>
+        <buttons wordType="yesnolist"/>
+        <buttonsShariff wordType="yesnolist"/>
    </socialMedia>
 </checkliste>

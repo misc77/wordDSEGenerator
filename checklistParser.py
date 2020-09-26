@@ -25,7 +25,6 @@ def readVersion(checklistDocument):
     log = logging.getLogger("DSEGenerator.readVersion")
     try:
         version = checklistDocument.tables[0].table.cell(1, 0).text
-        print("version: " + version)
         if version is None:
             version = "1.0"
         return version
@@ -36,7 +35,6 @@ def readVersion(checklistDocument):
 def getTagContent(tag):
     text = ""
     text = tag.split(">")[1].split("<")[0]
-    print("getTagContent: " + text)
     return text
 
 def parseTextInput(xmlElement, checklistDocument):
@@ -79,7 +77,6 @@ def parseCheckboxlist(xmlElement, checklistDocument):
             else:
                 checkboxStatelist.append(False)
     log.debug("list: " + str(checkboxStatelist))
-    log.debug("doc: " + str(checklistDocument.text))
     for e in checklistDocument.text.split("\n"):
         e=e.strip()
         if i==0:
@@ -105,13 +102,10 @@ def parseDynamictable(xmlElement, checklistDocument):    #-- EXPERIMENTAL
     table = {}
     row = 0
     column = 0  
-    header = {}
     row_data = {}  
     position = 0
     element = checklistDocument._element.xml
-    print("dynamic content: " + element)
     elementliste = element.split("<w:tbl>")
-    print("element count: " + str(len(elementliste)))
     position = len(elementliste) - 1            
     table_elementlist = elementliste[position].split("<w:tr") #start with last table in given table
     for row_element in table_elementlist:
@@ -119,7 +113,6 @@ def parseDynamictable(xmlElement, checklistDocument):    #-- EXPERIMENTAL
         for cell in row_element.split("<"):
             if cell.startswith("w:t>"):
                 cell = getTagContent(cell)
-                print("element to set t: " + cell)
                 row_data[column] = cell
             column = column + 1
         if len(row_data) > 0:
@@ -129,12 +122,11 @@ def parseDynamictable(xmlElement, checklistDocument):    #-- EXPERIMENTAL
 
 
 def parseTable(xmlElement, checklistDocument):
+    zeile = 0
     pos = int(xmlElement.attrib.get(const.CHECKLIST_ATTRIB_TAB))
-    print("parseTable: " + xmlElement.text + " ##" + str(pos))
     table = checklistDocument.tables[pos-1]
     tableObject = {}    
     for child in xmlElement:
-        zeile = int(child.attrib.get(const.CHECKLIST_ATTRIB_ROW))-1
         if child.attrib.get(const.CHECKLIST_ATTRIB_COL) == None:
             spalte = 0
         else:
@@ -155,6 +147,7 @@ def parseTable(xmlElement, checklistDocument):
             tableObject[child.tag] = parseTextInput(child, table.cell(zeile, spalte))
         else:
             tableObject[child.tag] = table.cell(zeile,spalte).text      
+        zeile = zeile + 1
 
     return tableObject
 
@@ -170,7 +163,6 @@ def parseChecklist(checklistFile):
     if checklistDocument is not None:
         version = readVersion(checklistDocument)
         checklistTemplate = Resources.getChecklisteTemplate(version)
-        print("version" + version + " checklistTemplate=" + checklistTemplate)
         try:
             tree = ET.parse(checklistTemplate) 
         except Exception as e:
@@ -185,13 +177,14 @@ def parseChecklist(checklistFile):
             root = tree.getroot()
             checklistObject = XMLObject()
             checklistObject.xmlVersion = root.attrib.get(const.DSEDOC_ATTRIB_VERSION)
+            checklistObject.wordVersion = version
             if Resources.validVersions(version, checklistObject.xmlVersion):
                 for elem in root:
                     if isWordTypeTable(elem):
                         checklistObject.addElement(elem.tag, parseTable(elem, checklistDocument))
 
-                if const.CHECKLIST_ATTRIB_TITLE in checklistObject.elementList:
-                    checklistObject.wordVersion = checklistObject.elementList[const.CHECKLIST_ATTRIB_TITLE][const.CHECKLIST_ATTRIB_VERSION]
+                #if const.CHECKLIST_ATTRIB_TITLE in checklistObject.elementList:
+                 #   checklistObject.wordVersion = checklistObject.elementList[const.CHECKLIST_ATTRIB_TITLE][const.CHECKLIST_ATTRIB_VERSION]
             else:
                 log.warn("No valid versions! Processing skipped!")
     else:

@@ -39,6 +39,7 @@ class XMLObject:
     def getKeyList(self, elementName, key):
         keyList = ""
         for e in self.elementList[elementName][key]:
+            print("key " + key + " in elementName " + elementName + " element " + e )
             keyList += e + ", "
         if keyList.endswith(","):
             keyList = keyList[0:len(keyList)-1]
