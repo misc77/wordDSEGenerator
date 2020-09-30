@@ -175,6 +175,7 @@ class DocGenerator:
     def parseTemplate(self, version = "1.0"):
         log = logger.getLoggerCtx("DSEGenerator.docGenerator.parseTemplate")
         filename = Resources.getDSETemplate(version)
+        print("filename: " + filename)
         try:
             tree = ET.parse(filename)   
         except(ET.ParseError):

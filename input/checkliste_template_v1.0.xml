@@ -139,8 +139,9 @@
         <weiterleitung wordType="text"/>
         <erhebung wordType="text"/>
         <versand wordType="text"/>
-        <optin wordType="checkboxlist"/>
-        <verschluesselung wordType="text"/>
+        <optin wordType="yesnolist"/>
+        <verschluesselung wordType="yesnolist"/>
+        <technik wordType="text"/>
     </gewinnspiele>
     <blog wordType="table" tabelle="21">
         <hinweis wordType="text"/>
@@ -151,16 +152,19 @@
         <weiterleitung wordType="text"/>
         <erhebung wordType="text"/>
         <abonnement wordType="yesnolist"/>
-        <optin wordType="checkboxlist"/>
-        <verschluesselung wordType="text"/>
+        <optin wordType="yesnolist"/>
+        <verschluesselung wordType="yesnolist"/>
+        <technik wordType="text"/>
     </blog>
     <disqus wordType="table" tabelle="22">
         <verwendung wordType="yesnolist"/>
         <dauer wordType="text"/>
         <weiterleitung wordType="text"/>
         <erhebung wordType="text"/>
-        <optin wordType="checkboxlist"/>
-        <verschluesselung wordType="text"/>
+        <abonnement wordType="yesnolist"/>
+        <optin wordType="yesnolist"/>
+        <verschluesselung wordType="yesnolist"/>
+        <technik wordType="text"/>
     </disqus>
     <bewerberportal wordType="table" tabelle="23">
         <hinweis wordType="text"/>
@@ -172,7 +176,7 @@
         <dauer wordType="text"/>
         <weiterleitung wordType="yesnolist"/>
         <dritte wordType="text"/>
-        <optin wordType="checkboxlist"/>
+        <optin wordType="yesnolist"/>
         <talentpool wordType="yesnolist"/>
         <verschluesselung wordType="yesnolist"/>
         <technik wordType="text"/>
@@ -184,11 +188,13 @@
         <datenErhebung wordType="checkboxlist"/>
         <kundenaccount wordType="yesnolist"/>
         <kundendaten wordType="checkboxlist"/>
-        <sensibleDaten wordType="text"/>
+        <sensibleDaten wordType="yesnolist"/>
+        <verwendungSensibleDaten wordType="text"/>
         <dauer wordType="text"/>
         <weiterleitung wordType="checkboxlist"/>
         <datenDritter wordType="checkboxlist"/>
-        <verschluesselung wordType="text"/>
+        <verschluesselung wordType="yesnolist"/>
+        <technik wordType="text"/>
     </webshop>
     <sonstigeregistrierung wordType="table" tabelle="25">
         <hinweis wordType="text"/>
