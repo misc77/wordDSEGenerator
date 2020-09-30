@@ -8,6 +8,14 @@
     - Proper display of Tables in generated doc
     - Proper formatting of Doc (font, headers, tables etc.) 
     - Implement function to only retrieve selected entries of checkbox list. Currently all are returned. 
+    - Missing: Cookies questionaire
+    - Newsletter: Condition based text to implement.
+
 
 
 * Individual DSE Documents (light) for Google, Facebook pixel etc. 
+
+
+
+* Open Points:
+    - many information on newsletter is not used in text. Can it be reduced?

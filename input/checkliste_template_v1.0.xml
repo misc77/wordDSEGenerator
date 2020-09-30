@@ -30,7 +30,7 @@
    </zugriffsdaten>
    <matomo wordType="table" tabelle="6">
 		<titel wordType="text"/>
-		<matomo wordType="yesnolist"/>
+		<verwendung wordType="yesnolist"/>
 		<anonymizeVisitorsIP wordType="checkboxlist"/>
 		<doNotTrack wordType="checkboxlist"/>
    </matomo>
@@ -51,6 +51,7 @@
    </etracker>
    <adobeanalytics wordType="table" tabelle="10">
   		<verwendung wordType="yesnolist"/>
+        <anonymisiert wordType="yesnolist"/>
 		<browserAddon wordType="yesnolist"/>
    </adobeanalytics>
    <wiredminds wordType="table" tabelle="11">
@@ -82,6 +83,7 @@
    <kontaktformular wordType="table" tabelle="17">
         <hinweis wordType="text"/>
 		<verwendung wordType="yesnolist"/>
+        <kanal wordType="checkboxlist"/>
 		<daten wordType="checkboxlist"/>
         <dauer wordType="text"/>
         <speicherort wordType="checkboxlist"/>
@@ -91,20 +93,19 @@
         <verschluesselung wordType="yesnolist"/>
         <technik wordType="text"/>
    </kontaktformular>
-   <newsletterformular wordType="table" tabelle="18">
+   <newsletter wordType="table" tabelle="18">
         <hinweis wordType="text"/>
 		<verwendung wordType="yesnolist"/>
-		<daten wordType="checkboxlist"/>
+		<anmeldedaten wordType="checkboxlist"/>
 		<speicherdauer wordType="text"/>
 		<weiterleitung wordType="yesnolist"/>
         <dritte wordType="text"/>
         <inhalt wordType="checkboxlist"/>
 		<frequenz wordType="text"/>
 		<opt-in wordType="yesnolist"/>
-		<abmeldelink wordType="checkboxlist"/>
+		<abmeldelink wordType="yesnolist"/>
 		<widerrufsrecht wordType="yesnolist"/>
-		<programm wordType="yesnolist"/>
-        <name wordType="text"/>
+		<versand wordType="checkboxlist"/>
         <adv wordType="yesnolist"/>
 		<aenderungsinfo wordType="checkboxlist"/>
         <verschluesselung wordType="yesnolist"/>
@@ -112,11 +113,12 @@
         <klicks wordType="yesnolist"/>
         <daten wordType="checkboxlist"/>
         <anonymisiert wordType="checkboxlist"/>
-    </newsletterformular>
+    </newsletter>
     <spende wordType="table" tabelle="19">
         <hinweis wordType="text"/>
-		<bankdaten wordType="yesnolist"/>
+		<ueberweisung wordType="yesnolist"/>
         <formular wordType="yesnolist"/>
+        <finanzamt wordType="text"/>
         <daten wordType="checkboxlist"/>
         <moeglichkeiten wordType="checkboxlist"/>
         <moeglichkeitenDaten wordType="checkboxlist"/>
@@ -129,7 +131,8 @@
         <verwendung wordType="yesnolist"/>
         <art wordType="text"/>
 		<daten wordType="checkboxlist"/>
-        <bekanntmachung wordType="text"/>
+        <oeffentlich wordType="yesnolist"/>
+        <pseudonymisiert wordType="yesnolist"/>
         <veroeffentlichung wordType="text"/>
         <benachrichtigung wordType="text"/>
         <dauer wordType="text"/>
