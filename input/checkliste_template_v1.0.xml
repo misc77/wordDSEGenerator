@@ -146,13 +146,14 @@
     <blog wordType="table" tabelle="21">
         <hinweis wordType="text"/>
         <verwendung wordType="yesnolist"/>
-        <datenErhebung wordType="checkboxlist"/>
+        <daten wordType="checkboxlist"/>
         <datenSpeicherung wordType="checkboxlist"/>
         <dauer wordType="text"/>
         <weiterleitung wordType="text"/>
         <erhebung wordType="text"/>
         <abonnement wordType="yesnolist"/>
         <optin wordType="yesnolist"/>
+        <ekomi wordType="yesnolist"/>
         <verschluesselung wordType="yesnolist"/>
         <technik wordType="text"/>
     </blog>
