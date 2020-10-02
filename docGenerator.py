@@ -10,6 +10,7 @@ import logger
 import datetime
 
 from docx import Document
+from docx.shared import Pt
 from resources import Resources
 
 class DocGenerator:
@@ -140,36 +141,36 @@ class DocGenerator:
 
     def processTable(self, table_elem):  #TODO
         text = table_elem.text
+        #for elem in table_elem:
+       #     if elem.tag == const.DSEDOC_TAG_ROW:
+
         return text
 
 
-    def processParagraph(self, paragraph):
+    def processParagraph(self, paragraph, chapter_title):
         is_first = True
-        titel = paragraph.attrib.get(const.DSEDOC_ATTRIB_TITLE)
+        title = paragraph.attrib.get(const.DSEDOC_ATTRIB_TITLE)
         text = paragraph.text
         if text != "":
             for elem in paragraph:
                 if elem.tag == const.DSEDOC_TAG_TEXT:
                     text = self.processText(elem)
                 elif elem.tag == const.DSEDOC_TAG_TABLE:
-                    text = self.processTable(elem)
-                
+                    text = self.processTable(elem)            
                 if text != "": 
-                    if is_first == True and titel != "":
-                        self.dseDocument.add_heading(titel, level=3)
+                    # Print header only if there is content to print
+                    if is_first == True and title != "":
+                        self.dseDocument.add_heading(chapter_title, level=2)
+                        self.dseDocument.add_heading(title, level=3)
                     self.dseDocument.add_paragraph(text)
                     is_first = False
-                    
-                        
 
 
     def processChapter(self, chapter):
-        titel = chapter.attrib.get(const.DSEDOC_ATTRIB_TITLE)
-        if titel != "":
-            self.dseDocument.add_heading(titel, level=2)
+        title = chapter.attrib.get(const.DSEDOC_ATTRIB_TITLE)
         for elem in chapter:
             if elem.tag == const.DSEDOC_TAG_PARAGRAPH:
-                self.processParagraph(elem)
+                self.processParagraph(elem, title)
 
 
     def parseTemplate(self, version = "1.0"):
@@ -187,10 +188,18 @@ class DocGenerator:
                 self.dseDocument = Document()
                 core_properties = self.dseDocument.core_properties
                 core_properties.comments = "Checklist Version:" + self.checklistObject.wordVersion + ", Checklist Template Version: " + self.checklistObject.xmlVersion + ", DSE Document Template Version: " + root.attrib.get(const.DSEDOC_ATTRIB_VERSION)
+                style = self.dseDocument.styles['Normal']
+                font = style.font
+                font.name = "Arial"
+                font.size = Pt(12)
+                
                 for elem in root:
                     if elem.tag == const.DSEDOC_TAG_CHAPTER:
                         self.processChapter(elem)
-                self.processed = True
+                year = datetime.date.today().strftime("%Y")
+
+                self.dseDocument.add_paragraph("@ " + year + " netvocat GmbH")
+                self.processed = True 
             else:
                 log.warning("Processing skipped because of invalid versions between Checklist template XML and DSE template XML!! ")
 
@@ -205,7 +214,8 @@ class DocGenerator:
             self.dseDocument.save(filename)
         except (PermissionError):
             log.warning("File '" + filename + "' could not be written! " + PermissionError.strerror)
-            self.saveDocument(versionnumber+1)
+            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_dseDocument_"+str(versionnumber+1)+".docx"  
+            self.saveDocument(filename)
 
         if os.path.isfile(filename):
             log.info("File '" + filename + "' has been written successfully!")
