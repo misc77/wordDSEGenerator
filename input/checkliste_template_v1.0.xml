@@ -192,8 +192,10 @@
         <sensibleDaten wordType="yesnolist"/>
         <verwendungSensibleDaten wordType="text"/>
         <dauer wordType="text"/>
-        <weiterleitung wordType="checkboxlist"/>
+        <weiterleitung wordType="yesnolist"/>
+        <empfaenger wordType="checkboxlist"/>
         <datenDritter wordType="checkboxlist"/>
+        <findologic wordType="yesnolist"/>
         <verschluesselung wordType="yesnolist"/>
         <technik wordType="text"/>
     </webshop>
@@ -216,9 +218,9 @@
     <zahlungsdienstleister wordType="table" tabelle="26">
         <anbieter wordType="checkboxlist"/>
     </zahlungsdienstleister>
-    <amazonPartnerlinks wordType="table" tabelle="27">
+    <partnerlinks wordType="table" tabelle="27">
         <programm wordType="checkboxlist"/>
-    </amazonPartnerlinks>
+    </partnerlinks>
     <sonstigeTools wordType="table" tabelle="28">
         <tools wordType="checkboxlist"/>
     </sonstigeTools>
