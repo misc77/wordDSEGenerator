@@ -55,8 +55,10 @@ def parseYesNoList(xmlElement, checklistDocument):
             e = e.split('"')[1]
             if e == "1" : 
                 checkboxStatelist.append(True)
+                break
             else:
                 checkboxStatelist.append(False)
+                break
     if checkboxStatelist is not None and len(checkboxStatelist)>0 and  checkboxStatelist[0] is True:
         return "True"
     else:
@@ -76,9 +78,8 @@ def parseCheckboxlist(xmlElement, checklistDocument):
                 checkboxStatelist.append(True)
             else:
                 checkboxStatelist.append(False)
-    log.debug("list: " + str(checkboxStatelist))
     for e in checklistDocument.text.split("\n"):
-        e=e.strip()
+        e=e.lstrip().rstrip()
         if i==0:
             i=i+1
             continue
@@ -94,7 +95,6 @@ def parseCheckboxlist(xmlElement, checklistDocument):
             except (IndexError):
                 log.error("list index out of range!")
         i=i+1
-    log.debug("returning values: " + str(values))
     return values
 
 def parseDynamictable(xmlElement, checklistDocument):    #-- EXPERIMENTAL

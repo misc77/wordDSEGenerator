@@ -1,8 +1,9 @@
 <?xml version="1.0" ?>
 <DSEDokument version="1.0">
     <Kapitel titel="" kommentar="Einleitung">
-        <Abschnitt titel="Allgemeine Angaben"><Text>Der Schutz Ihrer personenbezogenen Daten ist uns sehr wichtig. Damit sämtliche Datenverarbeitungsvorgänge auf unserer Webseite und in unseren Angeboten für Sie als Besucher und Nutzer (nachfolgend „Nutzer“ genannt) unserer Webseite transparent und nachvollziehbar sind, klären wir Sie in dieser Datenschutzerklärung über die Art, den Umfang und den Zweck der Verarbeitung Ihrer personenbezogenen Daten auf unserer Webseite auf. 
-        Sie können sich die Datenschutzerklärung speichern oder ausdrucken, indem Sie entweder in Ihrem Browser die Befehle „drucken“ oder „Seite speichern unter“ wählen oder die hier hinterlegte pdf-Version drucken oder speichern. Um die pdf-Version öffnen zu können, benötigen Sie ein spezielles Programm für pdf-Dateien (z. B. Adobe Reader).</Text>
+        <Abschnitt titel="Allgemeine Angaben">
+                <Text>Der Schutz Ihrer personenbezogenen Daten ist uns sehr wichtig. Damit sämtliche Datenverarbeitungsvorgänge auf unserer Webseite und in unseren Angeboten für Sie als Besucher und Nutzer (nachfolgend „Nutzer“ genannt) unserer Webseite transparent und nachvollziehbar sind, klären wir Sie in dieser Datenschutzerklärung über die Art, den Umfang und den Zweck der Verarbeitung Ihrer personenbezogenen Daten auf unserer Webseite auf.</Text> 
+                <Text>Sie können sich die Datenschutzerklärung speichern oder ausdrucken, indem Sie entweder in Ihrem Browser die Befehle „drucken“ oder „Seite speichern unter“ wählen oder die hier hinterlegte pdf-Version drucken oder speichern. Um die pdf-Version öffnen zu können, benötigen Sie ein spezielles Programm für pdf-Dateien (z. B. Adobe Reader).</Text>
         </Abschnitt>
         <Abschnitt titel="Aktualität und Änderung dieser Datenschutzerklärung"><Text>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand {str(datetime.today().strftime(%B %Y))}. Durch die Weiterentwicklung unserer Webseite und Angebote oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf unserer Webseite unter {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[9]} von Ihnen abgerufen und ausgedruckt werden.</Text></Abschnitt>
         <Abschnitt titel="Verantwortlichkeit"><Text>Verantwortlich für die Verarbeitung personenbezogener Daten auf dieser Webseite ist:
@@ -16,13 +17,13 @@ Email:          {self.checklistObject.elementList["verantwortlicher"]["adresse"]
 </Text>
         </Abschnitt>
         <Abschnitt titel="Datenschutzanfragen / Datenschutzbeauftragter"><Text>Sämtliche Anfragen zur Verarbeitung Ihrer personenbezogenen Daten oder die Ausübung Ihrer im Folgenden genannten Rechte richten Sie bitte per E-Mail, Fax oder Post an folgende Adresse:
-Firmenname: {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[0]}
-Straße:     {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[1]}
-PLZ, Ort:   {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[2]}
-Land:       {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[3]}
-Tel:        {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[4]}
-Fax:        {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[5]}
-Email:      {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[6]}</Text>
+Firmenname:     {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[0]}
+Straße:         {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[1]}
+PLZ, Ort:       {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[2]}
+Land:           {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[3]}
+Tel:            {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[4]}
+Fax:            {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[5]}
+Email:          {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[6]}</Text>
         </Abschnitt>
 
     </Kapitel>
@@ -63,7 +64,7 @@ Email:      {self.checklistObject.elementList["dsb"]["adresse"].split("\n")[6]}<
         <Abschnitt titel="Löschung / Sperrung Ihrer personenbezogenen Daten">
                 <Text>Wir speichern Ihre personenbezogenen Daten nur so lange, wie dies zur Erreichung der hier genannten Zwecke erforderlich ist. Darüber hinaus speichern wir Ihre Daten nur, wenn gesetzliche Aufbewahrungspflichten dies erfordern (z. B. 6 Jahre gemäß § 257 Abs. 1 HGB und 10 Jahre gemäß § 147 Abs. 1 AO für Handels- und Geschäftsbriefe, Rechnungen, Angebote etc.). Nach Fortfall des jeweiligen Zweckes bzw. Ablauf dieser Fristen werden die Daten entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht gemäß Art. 17, 18 DSGVO.</Text>
         </Abschnitt>
-        <Abschnitt titel="hre Rechte als Betroffener">
+        <Abschnitt titel="Ihre Rechte als Betroffener">
                 <Text>Sie haben das Recht, jederzeit unentgeltlich Auskunft und eine Kopie über Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten (s. Art. 15 DSGVO).</Text>
                 <Text>Sie haben das Recht auf Berichtigung oder Vervollständigung Ihrer ggfs. unrichtig gespeicherten Daten (s. Art. 16 DSGVO).</Text>
                 <Text>Sie haben auch das Recht auf Einschränkung der Verarbeitung Ihrer Daten (s. Art. 18 DSGVO) und das Recht auf Löschung Ihrer Daten (s. Art. 17 DSGVO). Eine Löschung Ihrer Daten ist nicht möglich, soweit wir verpflichtet sind, die Daten zur Vertragsabwicklung oder aufgrund sonstiger gesetzlicher Aufbewahrungspflichten weiterhin zu speichern. Statt der Löschung nehmen wir eine Sperrung Ihrer Daten vor.</Text>
@@ -92,11 +93,11 @@ Notwendige Cookies werden aufgrund unseres berechtigten Interesses am Betrieb un
     <Kapitel titel="Einsatz von Tracking- und Marketingtools">
         <Abschnitt titel="Matomo">
                 <Text cond="self.compareElementValue(self.checklistObject.elementList['matomo'], 'verwendung', True)">Wir verwenden auf unserer Webseite den Webanalysedienst Matomo.</Text>
-                <Text cond="self.compareElementValue(self.checklistObject.elementList['matomo'], 'anonymizeVisitorsIP', 'True')">Rechtsgrundlage für die Nutzung ist die Wahrung unserer berechtigten Interessen an der Analyse, Optimierung und dem wirtschaftlichen Betrieb unserer Webseite (s. Art. 6 Abs. 1 S. 1 lit. f DSGVO).   Diese Webseite verwendet Matomo mit der Erweiterung „AnonymizeIP“.</Text>
+                <Text cond="self.compareElementValue(self.checklistObject.elementList['matomo'], 'anonymizeVisitorsIP', True)">Rechtsgrundlage für die Nutzung ist die Wahrung unserer berechtigten Interessen an der Analyse, Optimierung und dem wirtschaftlichen Betrieb unserer Webseite (s. Art. 6 Abs. 1 S. 1 lit. f DSGVO).   Diese Webseite verwendet Matomo mit der Erweiterung „AnonymizeIP“.</Text>
                 <Text cond="self.compareElementValue(self.checklistObject.elementList['matomo'], 'verwendung', True)">Dadurch werden IP-Adressen gekürzt verarbeitet, eine direkte Personenbeziehbarkeit kann damit ausgeschlossen werden. Die mittels Matomo von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen von uns erhobenen Daten zusammengeführt.</Text>
                 <Text cond="self.compareElementValue(self.checklistObject.elementList['matomo'], 'verwendung', True)">Sie können der Datenverarbeitung durch Matomo für die Zukunft widersprechen, indem Sie das nachfolgende Häkchen entfernen und so ein Opt-Out-Cookie in Ihrem Browser installieren: …………………………….. [
 Sofern Sie in Ihrem Browser alle Cookies löschen, müssen Sie beim nächsten Besuch das Opt-Out-Cookie von Matomo wieder neu installieren.</Text>
-                <Text cond="self.compareElementValue(self.checklistObject.elementList['matomo'], 'doNotTrack', 'True')">Zudem haben wir in Matomo die "Do not track"-Funktion aktiviert. Wenn Ihr Browser diese Funktion unterstützt und Sie in den Einstellungen des Browsers die Funktion aktiviert haben, werden von Matomo keine Daten erfasst, auch wenn Sie das o. g. Opt-Out-Cookie nicht nutzen.</Text>
+                <Text cond="self.compareElementValue(self.checklistObject.elementList['matomo'], 'doNotTrack', True)">Zudem haben wir in Matomo die "Do not track"-Funktion aktiviert. Wenn Ihr Browser diese Funktion unterstützt und Sie in den Einstellungen des Browsers die Funktion aktiviert haben, werden von Matomo keine Daten erfasst, auch wenn Sie das o. g. Opt-Out-Cookie nicht nutzen.</Text>
                 <Text cond="self.compareElementValue(self.checklistObject.elementList['matomo'], 'verwendung', True)">Das Programm Matomo ist ein Open-Source-Projekt. Informationen zum Datenschutz von Matomo erhalten Sie unter: https://matomo.org/privacy-policy/.</Text>
         </Abschnitt>
         <Abschnitt titel="Google Analytics">
@@ -107,7 +108,7 @@ Sofern Sie in Ihrem Browser alle Cookies löschen, müssen Sie beim nächsten Be
                 <Text cond="self.compareElementValue(self.checklistObject.elementList['googleanalytics'], 'verwendung', True)">Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; in diesem Fall können jedoch ggfs. nicht mehr sämtliche Funktionen dieser Webseite genutzt werden.</Text>
                 <Text cond="self.compareElementValue(self.checklistObject.elementList['googleanalytics'], 'verwendung', True)">Sie können darüber hinaus der Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Webseite bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie der Verarbeitung dieser Daten durch Google für die Zukunft widersprechen, indem sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: http://tools.google.com/dlpage/gaoptout?hl=de.
 Alternativ (bzw. bei der Nutzung der Webseite über einen mobilen Browser) können Sie die Verarbeitung Ihrer Daten durch Google Analytics durch Betätigung des folgenden Links (<a href='{self.checklistObject.elementList["googleanalytics"]["optOutLink"]}'>Google Analytics deaktivieren</a>) verhindern. Durch Betätigung des Links wird ein Opt-Out-Cookie auf Ihrem Rechner abgelegt. Wenn Sie Cookies auf Ihrem Gerät löschen, müssen Sie den Link erneut betätigen. </Text>
-                <Text>Weitere Informationen zum Datenschutz von Google erhalten Sie unter: https://policies.google.com/technologies/ads, https://policies.google.com/privacy oder https://adssettings.google.com/. 
+                <Text cond="self.compareElementValue(self.checklistObject.elementList['googleanalytics'], 'verwendung', True)">Weitere Informationen zum Datenschutz von Google erhalten Sie unter: https://policies.google.com/technologies/ads, https://policies.google.com/privacy oder https://adssettings.google.com/. 
 Die Datenschutzerklärung von Google können Sie einsehen unter: https://policies.google.com/privacy?hl=de.</Text>
         </Abschnitt>
         <Abschnitt titel="Google Ads und Conversion Tracking">

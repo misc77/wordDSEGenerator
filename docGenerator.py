@@ -23,6 +23,31 @@ class DocGenerator:
         self.dseDocument = None
         self.processed = False
 
+    def applyDocFormatting(self):
+        style = self.dseDocument.styles['Normal']
+        font = style.font
+        font.name = "Arial"
+        font.size = Pt(12)
+
+        style = self.dseDocument.styles['Heading 1']
+        font = style.font
+        font.name = "Arial"
+        font.size = Pt(16)
+
+        style = self.dseDocument.styles['Heading 2']
+        font = style.font
+        font.name = "Arial"
+        font.size = Pt(14)
+        font.bold = True
+
+        style = self.dseDocument.styles['Heading 3']
+        font = style.font
+        font.name = "Arial"
+        font.size = Pt(12)
+        font.bold = True
+
+                
+
     def formatList(self, text):
         """formatList
         
@@ -31,7 +56,10 @@ class DocGenerator:
         """
         liste = ""
         for item in text.split(','):
-            if item is not None:
+            #Some Filter
+            if item.lstrip().startswith('andere Daten:'):
+                    item.replace('andere Daten:', '')
+            if item is not None and len(item) > 0:
                 liste += "- " + item + "\n"
         return liste
 
@@ -54,7 +82,7 @@ class DocGenerator:
                 return True
         return False
 
-    def compareElementValue(self, dictionary, element, value, exact_match = True):
+    def compareElementValue(self, dictionary, element, value, exact_match = False):
         """Compares value of element in Dictionary structure
         
         Arguments:
@@ -73,9 +101,7 @@ class DocGenerator:
                 if item.find(element) == -1:
                     continue
                 else:
-                    print("key found " + item + " -> " + element)
-                    print("dict element = " + str(dictionary[item]) + " test for " + str(value))
-                    return (dictionary[item] == value)
+                    return (str(dictionary[item]) == str(value))
         return False 
 
     def evaluateCondition(self, text):
@@ -86,11 +112,9 @@ class DocGenerator:
         """
         log = logger.getLogger()
         condition = False
-        log.debug("condition: " + text)
         if text != "":
             try:
                 condition = eval(text)
-                log.debug("condition = " + str(condition))
             except Exception (IndexError, OverflowError, SyntaxError, TypeError, NameError):                    
                 log.warning("Error occured! Skipped evaluation! Condition to evaluate '" + text + "' will return False." )
         return condition
@@ -129,7 +153,6 @@ class DocGenerator:
         text = text_elem.text
         cond = text_elem.attrib.get(const.DSEDOC_ATTRIB_COND)
         if cond != "" and cond != None:
-            print("cond: " + str(cond))
             condition = self.evaluateCondition(cond)
             if condition is True:
                 text = self.evaluateFormular(text)
@@ -147,7 +170,7 @@ class DocGenerator:
         return text
 
 
-    def processParagraph(self, paragraph, chapter_title):
+    def processParagraph(self, paragraph, chapter_title, is_first_paragraph):
         is_first = True
         title = paragraph.attrib.get(const.DSEDOC_ATTRIB_TITLE)
         text = paragraph.text
@@ -159,18 +182,21 @@ class DocGenerator:
                     text = self.processTable(elem)            
                 if text != "": 
                     # Print header only if there is content to print
-                    if is_first == True and title != "":
-                        self.dseDocument.add_heading(chapter_title, level=2)
-                        self.dseDocument.add_heading(title, level=3)
+                    if is_first_paragraph == True and is_first == True and chapter_title != "":
+                        self.dseDocument.add_heading(chapter_title, level=1)
+                    if is_first and title != "":    
+                        self.dseDocument.add_heading(title, level=2)
                     self.dseDocument.add_paragraph(text)
                     is_first = False
 
 
     def processChapter(self, chapter):
+        is_first_paragraph = True
         title = chapter.attrib.get(const.DSEDOC_ATTRIB_TITLE)
         for elem in chapter:
             if elem.tag == const.DSEDOC_TAG_PARAGRAPH:
-                self.processParagraph(elem, title)
+                self.processParagraph(elem, title, is_first_paragraph)
+                is_first_paragraph = False
 
 
     def parseTemplate(self, version = "1.0"):
@@ -188,11 +214,7 @@ class DocGenerator:
                 self.dseDocument = Document()
                 core_properties = self.dseDocument.core_properties
                 core_properties.comments = "Checklist Version:" + self.checklistObject.wordVersion + ", Checklist Template Version: " + self.checklistObject.xmlVersion + ", DSE Document Template Version: " + root.attrib.get(const.DSEDOC_ATTRIB_VERSION)
-                style = self.dseDocument.styles['Normal']
-                font = style.font
-                font.name = "Arial"
-                font.size = Pt(12)
-                
+                self.applyDocFormatting()
                 for elem in root:
                     if elem.tag == const.DSEDOC_TAG_CHAPTER:
                         self.processChapter(elem)

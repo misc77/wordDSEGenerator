@@ -31,48 +31,57 @@
    <matomo wordType="table" tabelle="6">
 		<titel wordType="text"/>
 		<verwendung wordType="yesnolist"/>
-		<anonymizeVisitorsIP wordType="checkboxlist"/>
-		<doNotTrack wordType="checkboxlist"/>
+		<anonymizeVisitorsIP wordType="yesnolist"/>
+		<doNotTrack wordType="yesnolist"/>
    </matomo>
    <googleanalytics wordType="table" tabelle="7">
+        <titel wordType="text"/>
 		<verwendung wordType="yesnolist"/>
 		<optOutLink wordType="text"/>
         <ipAnonymisierung wordType="yesnolist"/>
    </googleanalytics>
    <googleuniversal wordType="table" tabelle="8">
+        <titel wordType="text"/>
 		<hinweis wordType="text"/>
 		<verwendung wordType="yesnolist"/>
 		<browserAddon wordType="checkboxlist"/>
    </googleuniversal>
    <etracker wordType="table" tabelle="9">
+        <titel wordType="text"/>
 		<verwendung wordType="yesnolist"/>
 		<cookies wordType="yesnolist"/>
 		<anonymisiert wordType="checkboxlist"/>
    </etracker>
    <adobeanalytics wordType="table" tabelle="10">
-  		<verwendung wordType="yesnolist"/>
+        <titel wordType="text"/>  
+        <verwendung wordType="yesnolist"/>
         <anonymisiert wordType="yesnolist"/>
 		<browserAddon wordType="yesnolist"/>
    </adobeanalytics>
    <wiredminds wordType="table" tabelle="11">
-		<verwendung wordType="yesnolist"/>
+        <titel wordType="text"/>
+        <verwendung wordType="yesnolist"/>
 		<browserAddon wordType="yesnolist"/>
    </wiredminds>
    <szm wordType="table" tabelle="12">
-		<verwendung wordType="yesnolist"/>
+        <titel wordType="text"/>
+        <verwendung wordType="yesnolist"/>
 		<applikation wordType="yesnolist"/>
 		<browserAddon wordType="yesnolist"/>
    </szm>
    <wordpressjetpack wordType="table" tabelle="13">
+        <titel wordType="text"/>
         <hinweis wordType="text"/>
 		<verwendung wordType="yesnolist"/>
 		<browserAddon wordType="yesnolist"/>
    </wordpressjetpack>
    <remarketing wordType="table" tabelle="14">
-		<tools wordType="checkboxlist"/>
+        <titel wordType="text"/>
+        <tools wordType="checkboxlist"/>
 		<optout wordType="yesnolist"/>
    </remarketing>
    <facebookpixel wordType="table" tabelle="15">
+        <titel wordType="text"/>
 		<verwendung wordType="yesnolist"/>
 		<customAudience wordType="yesnolist"/>
 		<conversionTracking wordType="yesnolist"/>
@@ -81,6 +90,7 @@
         <hinweis wordType="text"/>
    </hinweis>
    <kontaktformular wordType="table" tabelle="17">
+        <titel wordType="text"/>
         <hinweis wordType="text"/>
 		<verwendung wordType="yesnolist"/>
         <kanal wordType="checkboxlist"/>
@@ -94,6 +104,7 @@
         <technik wordType="text"/>
    </kontaktformular>
    <newsletter wordType="table" tabelle="18">
+        <titel wordType="text"/>
         <hinweis wordType="text"/>
 		<verwendung wordType="yesnolist"/>
 		<anmeldedaten wordType="checkboxlist"/>
@@ -115,6 +126,7 @@
         <anonymisiert wordType="checkboxlist"/>
     </newsletter>
     <spende wordType="table" tabelle="19">
+        <titel wordType="text"/>
         <hinweis wordType="text"/>
 		<ueberweisung wordType="yesnolist"/>
         <formular wordType="yesnolist"/>
@@ -127,6 +139,7 @@
         <verschluesselung wordType="text"/>
     </spende>
     <gewinnspiele wordType="table" tabelle="20">
+        <titel wordType="text"/>
         <hinweis wordType="text"/>
         <verwendung wordType="yesnolist"/>
         <art wordType="text"/>
@@ -144,6 +157,7 @@
         <technik wordType="text"/>
     </gewinnspiele>
     <blog wordType="table" tabelle="21">
+        <titel wordType="text"/>
         <hinweis wordType="text"/>
         <verwendung wordType="yesnolist"/>
         <daten wordType="checkboxlist"/>
@@ -183,6 +197,7 @@
         <technik wordType="text"/>
     </bewerberportal>
     <webshop wordType="table" tabelle="24">
+        <titel wordType="text"/>
         <hinweis wordType="text"/>
         <verwendung wordType="yesnolist"/>
         <gast wordType="yesnolist"/>
@@ -200,6 +215,7 @@
         <technik wordType="text"/>
     </webshop>
     <sonstigeregistrierung wordType="table" tabelle="25">
+        <titel wordType="text"/>
         <hinweis wordType="text"/>
 		<sonstigeregistrierung wordType="yesnolist"/>
 		<art wordType="text"/>
@@ -216,20 +232,25 @@
 		<aenderungsinfo wordType="checkboxlist"/>
     </sonstigeregistrierung>
     <zahlungsdienstleister wordType="table" tabelle="26">
+        <titel wordType="text"/>
         <anbieter wordType="checkboxlist"/>
     </zahlungsdienstleister>
     <partnerlinks wordType="table" tabelle="27">
+        <titel wordType="text"/>
         <programm wordType="checkboxlist"/>
     </partnerlinks>
     <sonstigeTools wordType="table" tabelle="28">
+        <titel wordType="text"/>
         <tools wordType="checkboxlist"/>
     </sonstigeTools>
     <datentransferAusland wordType="table" tabelle="29">
+        <titel wordType="text"/>
         <daten wordType="checkboxlist"/>
         <verschluesselung wordType="yesnolist"/>
         <technik wordType="text"/>
     </datentransferAusland>
     <socialMedia wordType="table" tabelle="30">
+        <titel wordType="text"/>
         <hinweis wordType="text"/>
         <praesenzen wordType="checkboxlist"/>
         <plugin wordType="checkboxlist"/>
