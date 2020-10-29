@@ -46,23 +46,6 @@ class DocGenerator:
         font.size = Pt(12)
         font.bold = True
 
-                
-
-    def formatList(self, text):
-        """formatList
-        
-        Arguments:
-            array {[type]} -- [description]
-        """
-        liste = ""
-        for item in text.split(','):
-            #Some Filter
-            if item.lstrip().startswith('andere Daten:'):
-                    item.replace('andere Daten:', '')
-            if item is not None and len(item) > 0:
-                liste += "- " + item + "\n"
-        return liste
-
     def containsElement(self, array, element):
         """[summary]Checks for element in list
         
@@ -202,7 +185,6 @@ class DocGenerator:
     def parseTemplate(self, version = "1.0"):
         log = logger.getLoggerCtx("DSEGenerator.docGenerator.parseTemplate")
         filename = Resources.getDSETemplate(version)
-        print("filename: " + filename)
         try:
             tree = ET.parse(filename)   
         except(ET.ParseError):

@@ -1,4 +1,5 @@
 from datetime import date
+from filter import Filter
 
 class XMLObject:
         
@@ -7,6 +8,7 @@ class XMLObject:
         self.wordVersion = ""
         self.xmlVersion = ""
         self.created = date.today()
+        self.filter = Filter()
 
     def __str__ (self):
         stringRepresentation = "created: " + str(self.created) + " \n"
@@ -33,15 +35,26 @@ class XMLObject:
     def getValue(self, elementName, key):
         return self.elementList[elementName][key]
 
+    def getText(self, elementName, key):
+        return self.elementList[elementName][key].split("\n")[1]
+
     def getValueByPos(self, position):
         return self.elementList[position]
 
-    def getKeyList(self, elementName, key):
+    def getListToString(self, elementName, key, prefix, postfix, delimiter):
         keyList = ""
+        element = ""
         for e in self.elementList[elementName][key]:
-            print("key " + key + " in elementName " + elementName + " element " + e )
-            keyList += e + ", "
-        if keyList.endswith(","):
+            element = self.filter.applyTextFilter(e)
+            if element != None and len(element) > 0:
+                keyList += prefix + element + postfix + delimiter
+        if keyList.endswith(delimiter):
             keyList = keyList[0:len(keyList)-1]
         return keyList
+
+    def getKeyList(self, elementName, key):
+        return self.getListToString(elementName, key, "", "", ", ")
+
+    def getFormattedKeyList(self, elementName, key):
+        return self.getListToString(elementName, key, "- ", "", "\n")
         

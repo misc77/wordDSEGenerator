@@ -140,10 +140,6 @@ def parseTable(xmlElement, checklistDocument):
         elif isWordTypeDynamicTable(child):
             tableObject[child.tag] = parseDynamictable(child, table.cell(zeile,spalte))
         elif isWordTypeTextInput(child):
-            print("tabelle: " + str(pos)) 
-            print("zeile: " + str(zeile))
-            print("spalte: " + str(spalte))
-            print("doc element: " + str(table.cell(zeile, spalte)._element.xml))
             tableObject[child.tag] = parseTextInput(child, table.cell(zeile, spalte))
         else:
             tableObject[child.tag] = table.cell(zeile,spalte).text      

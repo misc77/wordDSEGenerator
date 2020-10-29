@@ -152,7 +152,6 @@ class DSEGeneratorApp(wx.Frame):
             checklist_doc = parseChecklist(self.generator.checklistFile)
             self.generator.checklistObject = checklist_doc
             if checklist_doc.wordVersion != None:
-                print("text to print: " + checklist_doc.wordVersion.strip("\n"))
                 self.version_text.SetLabelText(checklist_doc.wordVersion.strip("\n"))
                 self.version_text_xml.SetLabelText(checklist_doc.xmlVersion)
                 self.status_text.SetLabelText("Checklist Document successfully processed!")      
