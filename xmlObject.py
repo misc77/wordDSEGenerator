@@ -1,3 +1,5 @@
+import const
+
 from datetime import date
 from filter import Filter
 
@@ -33,10 +35,10 @@ class XMLObject:
         return self.elementList
 
     def getValue(self, elementName, key):
-        return self.elementList[elementName][key]
+        return self.catchNull(self.elementList[elementName][key])
 
     def getText(self, elementName, key):
-        return self.elementList[elementName][key].split("\n")[1]
+        return self.catchNull(self.elementList[elementName][key].split("\n")[1])
 
     def getValueByPos(self, position):
         return self.elementList[position]
@@ -53,8 +55,13 @@ class XMLObject:
         return keyList
 
     def getKeyList(self, elementName, key):
-        return self.getListToString(elementName, key, "", "", ", ")
+        return self.catchNull(self.getListToString(elementName, key, "", "", ", "))
 
     def getFormattedKeyList(self, elementName, key):
-        return self.getListToString(elementName, key, "- ", "", "\n")
+        return self.catchNull(self.getListToString(elementName, key, "• ", "", "\n"))
+
+    def catchNull(self, text):
+        if text == None or len(text) == 0:
+            text = const.NULL_STRING
+        return text
         

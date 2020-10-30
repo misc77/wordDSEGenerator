@@ -2,7 +2,7 @@ from pkg_resources import resource_filename
 import wx
 
 class Resources:
-    templatePath = "/input"
+    templatePath = "/templates"
     outputPath = "/output"
     configPath = "/config"
     graphicsPath = "/gfx"

@@ -56,6 +56,7 @@ class DocGenerator:
         Returns:
             [type] -- [description]
         """
+        print ("element: " + element)
         for item in array:
             print("find " + element + " in " + item)
             if item.find(element) == -1:                
@@ -120,7 +121,6 @@ class DocGenerator:
                 cleanSkript = skript.replace("{","").replace("}","")
                 try:
                     text = text.replace(skript, eval(cleanSkript)) 
-                    log.info("Evaluated Text: " + text)
                 except (IndexError, OverflowError, SyntaxError, TypeError, NameError):                    
                     log.warning("Error occured! Skipped evaluation! String to evaluate '" + text + "' will be replaced by ''.")
                     text = text.replace(skript, "")    
@@ -211,14 +211,14 @@ class DocGenerator:
     def saveDocument(self, versionnumber=1, path=None):
         log = logger.getLoggerCtx("DSEGenerator.docGenerator.saveDocument")
         if path is None or len(path)==0:
-            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_dseDocument_"+str(versionnumber)+".docx"  
+            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_dseDocument_"+ versionnumber+".docx"  
         else:
             filename = path      
         try:
             self.dseDocument.save(filename)
         except (PermissionError):
             log.warning("File '" + filename + "' could not be written! " + PermissionError.strerror)
-            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_dseDocument_"+str(versionnumber+1)+".docx"  
+            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_dseDocument_"+ (versionnumber+1)+".docx"  
             self.saveDocument(filename)
 
         if os.path.isfile(filename):

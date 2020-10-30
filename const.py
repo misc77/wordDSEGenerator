@@ -25,3 +25,8 @@ DSEDOC_TAG_TEXT = "Text"
 DSEDOC_TAG_TABLE = "Tabelle"
 DSEDOC_TAG_COL = "Spalte"
 DSEDOC_TAG_ROW = "Zeile"
+
+"""
+    xmlObject Constants
+"""
+NULL_STRING = "#EMPTY"
