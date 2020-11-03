@@ -2,6 +2,7 @@ import configProvider
 import logger
 import wx
 import toolbox
+import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
 from dseGenerator import DSEGenerator
 from docGenerator import DocGenerator
@@ -210,10 +211,11 @@ class DSEGeneratorApp(wx.Frame):
         """
         if self.docList is not None and len(self.docList) > 0:
             dlg = wx.DirDialog(self, "Please select destination directory to save generated document(s)!", Resources.getOutputPath(), wx.DD_DEFAULT_STYLE | wx.DD_DIR_MUST_EXIST)
+            now = datetime.datetime.now().strftime("%Y%m%d%H%M%S") 
             if dlg.ShowModal() == wx.ID_OK:
                 path = dlg.GetPath()
                 for doc in self.docList:
-                    if doc.saveDocument(self.version_text_xml.GetLabelText(), path):
+                    if doc.saveDocument(self.version_text_xml.GetLabelText(), path, now):
                         self.status_text.SetLabelText(doc.name + " saved successfully!")      
             else:
                 wx.MessageBox("Warning! DSE Document hasn't been saved!", caption="Warning!")

@@ -169,17 +169,17 @@ class DocGenerator:
                 log.warning("Processing skipped because of invalid versions between Checklist template XML and DSE template XML!! ")
 
 
-    def saveDocument(self, versionnumber=1, path=None):
+    def saveDocument(self, versionnumber=1, path=None, now = datetime.datetime.now().strftime("%Y%m%d%H%M%S")):
         log = logger.getLoggerCtx("DSEGenerator.docGenerator.saveDocument")
         if path is None or len(path)==0:
-            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_" + self.name + "_" + versionnumber+".docx"  
+            filename = Resources.getOutputPath() + "/" + now + "_" + self.name + "_" + versionnumber+".docx"  
         else:
-            filename = path  + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_" + self.name + "_" + versionnumber+".docx"  
+            filename = path  + "/" + now + "_" + self.name + "_" + versionnumber+".docx"  
         try:
             self.dseDocument.save(filename)
         except (PermissionError):
             log.warning("File '" + filename + "' could not be written! " + PermissionError.strerror)
-            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") +  "_" + self.name + "_" + (versionnumber+1)+".docx"  
+            filename = Resources.getOutputPath() + "/" + now +  "_" + self.name + "_" + (versionnumber+1)+".docx"  
             self.saveDocument(filename)
 
         if os.path.isfile(filename):
