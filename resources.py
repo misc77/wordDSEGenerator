@@ -5,11 +5,13 @@ class Resources:
     templatePath = "/templates"
     outputPath = "/output"
     configPath = "/config"
+    inputPath = "/test/data/input/"
     graphicsPath = "/gfx"
     logPath = "/log"
     configFile = "config.ini"
     headerImage = "header.png"
     dseTemplate = "dse_template_v.xml"
+    youtubeTemplate = "youtube_template_v.xml"
     checklistTemplate = "checkliste_template_v.xml"
     logFile = "DSEGenerator.log"
 
@@ -20,14 +22,14 @@ class Resources:
         return Resources.get_filename(Resources.graphicsPath + "/" + Resources.headerImage)
 
     @staticmethod
-    def getDSETemplate(version = "1.0"):
+    def getDSETemplate(template = dseTemplate, version = "1.0"):
         """getDSETemplate 
         returns the filename of DSE Template for corresponding version.
         
         Keyword Arguments:
             version {str} -- [description] (default: {"1.0"})
         """
-        return Resources.get_filename(Resources.templatePath + "/" + Resources.getVersion(Resources.dseTemplate, version))
+        return Resources.get_filename(Resources.templatePath + "/" + Resources.getVersion(template, version))
 
     @staticmethod
     def getChecklisteTemplate(version = "1.0"):
@@ -48,6 +50,12 @@ class Resources:
     @staticmethod
     def getOutputPath():
         relativPath = Resources.outputPath
+        filename = resource_filename(__name__, relativPath)
+        return filename
+
+    @staticmethod
+    def getInputPath():
+        relativPath = Resources.inputPath
         filename = resource_filename(__name__, relativPath)
         return filename
 

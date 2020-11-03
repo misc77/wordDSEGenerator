@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 import const
 import logger
 import datetime
+import toolbox
 
 from docx import Document
 from docx.shared import Pt
@@ -17,11 +18,12 @@ class DocGenerator:
     """DocGenerator:
     """
    
-    def __init__(self, checklist):
+    def __init__(self, checklist, name):
         self.checklistObject = checklist
         self.dseTemplate = {}
         self.dseDocument = None
         self.processed = False
+        self.name = name
 
     def applyDocFormatting(self):
         style = self.dseDocument.styles['Normal']
@@ -46,47 +48,6 @@ class DocGenerator:
         font.size = Pt(12)
         font.bold = True
 
-    def containsElement(self, array, element):
-        """[summary]Checks for element in list
-        
-        Arguments:
-            array {[type]} -- [description]
-            element {[type]} -- [description]
-        
-        Returns:
-            [type] -- [description]
-        """
-        print ("element: " + element)
-        for item in array:
-            print("find " + element + " in " + item)
-            if item.find(element) == -1:                
-                continue
-            else:
-                print("element " + element + " found!")
-                return True
-        return False
-
-    def compareElementValue(self, dictionary, element, value, exact_match = False):
-        """Compares value of element in Dictionary structure
-        
-        Arguments:
-            dictionary {[type]} -- [description]
-            element {[type]} -- [description]
-            value {[type]} -- [description]
-        
-        Returns:
-            [type] -- [description]
-        """        
-        if exact_match:
-            if element in dictionary:
-                return dictionary[element] == value
-        else:
-            for item in dictionary.keys():
-                if item.find(element) == -1:
-                    continue
-                else:
-                    return (str(dictionary[item]) == str(value))
-        return False 
 
     def evaluateCondition(self, text):
         """evalutate conditions given in Mapping template for DSE Document
@@ -182,9 +143,9 @@ class DocGenerator:
                 is_first_paragraph = False
 
 
-    def parseTemplate(self, version = "1.0"):
+    def parseTemplate(self, template, version = "1.0"):
         log = logger.getLoggerCtx("DSEGenerator.docGenerator.parseTemplate")
-        filename = Resources.getDSETemplate(version)
+        filename = Resources.getDSETemplate(template, version)
         try:
             tree = ET.parse(filename)   
         except(ET.ParseError):
@@ -211,14 +172,14 @@ class DocGenerator:
     def saveDocument(self, versionnumber=1, path=None):
         log = logger.getLoggerCtx("DSEGenerator.docGenerator.saveDocument")
         if path is None or len(path)==0:
-            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_dseDocument_"+ versionnumber+".docx"  
+            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_" + self.name + "_" + versionnumber+".docx"  
         else:
-            filename = path      
+            filename = path  + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_" + self.name + "_" + versionnumber+".docx"  
         try:
             self.dseDocument.save(filename)
         except (PermissionError):
             log.warning("File '" + filename + "' could not be written! " + PermissionError.strerror)
-            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") + "_dseDocument_"+ (versionnumber+1)+".docx"  
+            filename = Resources.getOutputPath() + "/" + self.checklistObject.created.strftime("%Y%m%d%H%M%S") +  "_" + self.name + "_" + (versionnumber+1)+".docx"  
             self.saveDocument(filename)
 
         if os.path.isfile(filename):

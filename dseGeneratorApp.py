@@ -1,6 +1,7 @@
 import configProvider
 import logger
 import wx
+import toolbox
 from apscheduler.schedulers.background import BackgroundScheduler
 from dseGenerator import DSEGenerator
 from docGenerator import DocGenerator
@@ -27,7 +28,7 @@ class DSEGeneratorApp(wx.Frame):
         #Scheduler   
         self.log_scheduler = BackgroundScheduler()
         self.generator = DSEGenerator()
-        self.doc_generator = None
+        self.docList = []
         self.log_scheduler.add_job(self.log_update, 'interval', seconds=10, id='log_job')
         self.log_scheduler.start() 
         self.view_show_log_item = None
@@ -66,7 +67,7 @@ class DSEGeneratorApp(wx.Frame):
         self.sizer.Add(checklist_label, pos=(2,0), flag=wx.LEFT|wx.RIGHT|wx.ALIGN_CENTER_VERTICAL, border=self.border)
         
         #FileDialog Button
-        file_picker = wx.FilePickerCtrl(self.panel, message="Please select a Checklist Document in *.docx Format:", wildcard="*.docx", style = wx.FLP_USE_TEXTCTRL )
+        file_picker = wx.FilePickerCtrl(self.panel, path=Resources.getInputPath(), message="Please select a Checklist Document in *.docx Format:", wildcard="*.docx", style = wx.FLP_USE_TEXTCTRL )
         file_picker.SetTextCtrlGrowable(True)
         file_picker.SetTextCtrlProportion(10)
         self.sizer.Add(file_picker, pos=(2,1), span=(1,2), flag=wx.EXPAND|wx.LEFT|wx.RIGHT,border=self.border)
@@ -207,12 +208,13 @@ class DSEGeneratorApp(wx.Frame):
         Arguments:
             evt {[type]} -- [description]
         """
-        if self.doc_generator.dseDocument is not None:
-            dlg = wx.FileDialog(self, "Please select destination to save generated document!", ".", "", "Word Document (*.docx)|*.docx", wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT)
+        if self.docList is not None and len(self.docList) > 0:
+            dlg = wx.DirDialog(self, "Please select destination directory to save generated document(s)!", Resources.getOutputPath(), wx.DD_DEFAULT_STYLE | wx.DD_DIR_MUST_EXIST)
             if dlg.ShowModal() == wx.ID_OK:
                 path = dlg.GetPath()
-                if self.doc_generator.saveDocument(self.version_text_xml.GetLabelText(), path):
-                    self.status_text.SetLabelText("DSE Document saved successfully!")      
+                for doc in self.docList:
+                    if doc.saveDocument(self.version_text_xml.GetLabelText(), path):
+                        self.status_text.SetLabelText(doc.name + " saved successfully!")      
             else:
                 wx.MessageBox("Warning! DSE Document hasn't been saved!", caption="Warning!")
         else:
@@ -250,10 +252,22 @@ class DSEGeneratorApp(wx.Frame):
     def generate_dse_document(self):
         """ Generates DSE Document by 
         """
+        #TODO: Implement concurrency!!
+        
         self.status_text.SetLabelText("DSE Document is being processed...")
-        self.doc_generator = DocGenerator(self.generator.checklistObject)       #Implement concurrency!!
-        self.doc_generator.parseTemplate(self.version_text_xml.GetLabelText())
-        self.status_text.SetLabelText("DSE Document successfully processed!")
+        # Main DSE Document
+        doc = DocGenerator(self.generator.checklistObject, "Main_DSE")
+        doc.parseTemplate(Resources.dseTemplate, self.version_text_xml.GetLabelText())
+        self.docList.append(doc)                             
+        self.status_text.SetLabelText("Main DSE Document successfully processed!")
+        
+        #YoutTube DSE Document
+        if self.generator.checklistObject != None and toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'YouTube'):
+            doc = DocGenerator(self.generator.checklistObject, "YouTube_DSE")
+            doc.parseTemplate(Resources.youtubeTemplate, self.version_text_xml.GetLabelText())
+            self.docList.append(doc)
+            self.status_text.SetLabelText("YouTube DSE Document successfully processed!")
+                
         self.save_button.Enable()     
 
     def reset(self):

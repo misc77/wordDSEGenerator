@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<DSEDokument version="1.0">
+    <Kapitel titel="Datenverarbeitung über unseren YouTube-Kanal">
+        <Abschnitt titel="Verantwortlichkeit">
+                <Text>Wir betreiben auf der Plattform YouTube, einem Dienst der Google Ireland Limited, Google Building Gordon House, 4 Barrow St, Dublin, D04 E5W5, Irland, einen sogenannte Kanal, um mit den dort aktiven Besuchern (= Abonnenten), die unseren Kanal abonniert haben, zu kommunizieren und sie u. a. über unsere Produkte und Dienstleistungen zu informieren. Unsere Kanal erreichen Sie unter: {self.checklistObject.getText("socialMedia","youtube")}</Text> 
+                <Text>Wir weisen Sie darauf hin, dass Sie die YouTube-Seite und ihre Funktionen in eigener Verantwortung nutzen. Dies gilt insbesondere für die Nutzung der interaktiven Funktionen (z.B. Kommentieren, Teilen, Bewerten).</Text>
+         </Abschnitt>
+    </Kapitel>
+</DSEDokument>

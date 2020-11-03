@@ -253,6 +253,14 @@
         <titel wordType="text"/>
         <hinweis wordType="text"/>
         <praesenzen wordType="checkboxlist"/>
+        <youtube wordType="text"/>
+        <alterativYoutube wordType="text"/>
+        <facebook wordType="text"/>
+        <alternativFacebook wordType="text"/>
+        <twitter wordType="text"/>
+        <alternativTwitter wordType="text"/>
+        <instagramm wordType="text"/>
+        <alternativInstagramm wordType="text"/>
         <plugin wordType="checkboxlist"/>
         <shariff wordType="yesnolist"/>
         <buttons wordType="yesnolist"/>
