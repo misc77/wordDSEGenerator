@@ -30,3 +30,16 @@ DSEDOC_TAG_ROW = "Zeile"
     xmlObject Constants
 """
 NULL_STRING = "#EMPTY"
+
+"""
+    Datenschutzbehörden Liste
+"""
+DSBDOC_TAG_DSB = "dsb"
+DSBDOC_TAG_NAME = "name"
+DSBDOC_TAG_ANSCHRIFT = "anschrift"
+DSBDOC_TAG_TELEFON = "telefon"
+DSBDOC_TAG_FAX = "fax"
+DSBDOC_TAG_EMAIL = "email"
+DSBDOC_TAG_INTERNET = "internet"
+DSBDOC_ATTRIB_LAND = "land"
+DSBDOC_ATTRIB_BUNDESLAND = "bundesland"

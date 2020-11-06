@@ -1,0 +1,149 @@
+<?xml version="1.0" ?>
+<datenschutzbehörden>
+    <dsb land="Deutschland" bundesland="">
+        <name>Der Bundesbeauftragte für den Datenschutz und die Informationsfreiheit</name>
+        <anschrift>Husarenstraße 30, D-53117 Bonn</anschrift>
+        <telefon>0228 997799 - 0</telefon>
+        <fax>0228 997799 - 550</fax>
+        <email>poststelle@bfdi.bund.de</email>
+        <internet>http://www.datenschutz.bund.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Baden-Württemberg">
+        <name>Der Landesbeauftragte für den Datenschutz Baden-Württemberg</name>
+        <anschrift>Postfach 10 29 32, 70025 Stuttgart
+Königstraße 10a, 70182 Stuttgart</anschrift>
+        <telefon>0711 615541 - 0</telefon>
+        <fax>0711 615541 - 15</fax>
+        <email>poststelle@lfd.bwl.de</email>
+        <internet>http://www.baden-wuerttemberg.datenschutz.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Bayern">
+        <name>Landesamt für Datenschutzaufsicht</name>
+        <anschrift>Postfach 606, 91511 Ansbach
+Promenade 27 (Schloss), 91522 Ansbach</anschrift>
+        <telefon>0981 53 - 1300</telefon>
+        <fax>0981 53 - 5300</fax>
+        <email>poststelle@lda.bayern.de</email>
+        <internet>http://www.lda.bayern.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Berlin">
+        <name>Berliner Beauftragter für Datenschutz und Informationsfreiheit</name>
+        <anschrift>Friedrichstr. 219, 10969 Berlin</anschrift>
+        <telefon>030 13889 - 0</telefon>
+        <fax>030 215 - 5050</fax>
+        <email>mailbox@datenschutz-berlin.de</email>
+        <internet>http://www.datenschutz-berlin.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Brandenburg">
+        <name>Die Landesbeauftragte für den Datenschutz und für das Recht auf Akteneinsicht (LDA Bbg)</name>
+        <anschrift>Stahnsdorfer Damm 77, 14532 Kleinmachnow</anschrift>
+        <telefon>033203 356 - 0</telefon>
+        <fax>033203 356 - 49</fax>
+        <email>Poststelle@LDA.Brandenburg.de</email>
+        <internet>http://www.lda.brandenburg.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Bremen">
+        <name>Der Landesbeauftragte für Datenschutz und Informationsfreiheit der Freien Hansestadt Bremen</name>
+        <anschrift>Postfach 10 03 80, 27503 Bremerhaven
+Arndtstr. 1, 27570 Bremerhaven</anschrift>
+        <telefon>0421 361 - 2010</telefon>
+        <fax>0421 361 - 18495</fax>
+        <email>office@datenschutz.bremen.de</email>
+        <internet>http://www.datenschutz-bremen.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Hamburg">
+        <name>Der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit</name>
+        <anschrift>Kurt-Schumacher-Allee 4, 20097 Hamburg</anschrift>
+        <telefon>040 42854 - 4040</telefon>
+        <fax>040 42854 - 4000</fax>
+        <email>mailbox@datenschutz.hamburg.de</email>
+        <internet>http://www.datenschutz.hamburg.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Hessen">
+        <name>Der Hessische Datenschutzbeauftragte</name>
+        <anschrift>Gustav-Stresemann-Ring 1, 65189 Wiesbaden
+Postfach 31 63, 65021 Wiesbaden</anschrift>
+        <telefon>0611 14080</telefon>
+        <fax>0611 1408 - 900</fax>
+        <email>poststelle@datenschutz.hessen.de</email>
+        <internet>http://www.datenschutz.hessen.de</internet>
+    </dsb>
+    <!-- To Fix -->
+    <dsb land="Deutschland" bundesland="Mecklenburg-Vorpommern">
+        <name>Der Landesbeauftragte für Datenschutz und Informationsfreiheit Mecklenburg-Vorpommern</name>
+        <anschrift>Lennéstr. 1, 19053 Schwerin</anschrift>
+        <telefon>0385 59494 - 0</telefon>
+        <fax>0385 59494 - 58</fax>
+        <email>datenschutz@mvnet.de</email>
+        <internet>http://www.lfd.m-v.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Niedersachsen">
+        <name>Der Landesbeauftragte für den Datenschutz Niedersachsen</name>
+        <anschrift>Prinzenstraße 5, 30159 Hannover</anschrift>
+        <telefon>0511 120 - 4500</telefon>
+        <fax>0511 120 - 4599</fax>
+        <email>poststelle@lfd.niedersachsen.de</email>
+        <internet>http://www.lfd.niedersachsen.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Nordrhein-Westfalen">
+        <name>Die Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen</name>
+        <anschrift>Kavalleriestraße 2-4, 40213 Düsseldorf</anschrift>
+        <telefon>0211 38424 - 0</telefon>
+        <fax>0211 38424 - 10</fax>
+        <email>poststelle@ldi.nrw.de</email>
+        <internet>http://www.ldi.nrw.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Rheinland-Pfalz">
+        <name>Der Landesbeauftragte für den Datenschutz Rheinland-Pfalz</name>
+        <anschrift>Hintere Bleiche 34, 55116 Mainz
+        Postfach 30 40, 55020 Mainz</anschrift>
+        <telefon>06131 208 - 2449</telefon>
+        <fax>06131 208 - 2497</fax>
+        <email>poststelle@datenschutz.rlp.de</email>
+        <internet>http://www.datenschutz.rlp.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Saarland">
+        <name>Unabhängiges Datenschutzzentrum Saarland 
+Landesbeauftragte für Datenschutz und Informationsfreiheit</name>
+        <anschrift>Fritz-Dobisch-Straße 12, 66111 Saarbrücken</anschrift>
+        <telefon>0681 94781 - 0</telefon>
+        <fax>0681 94781 - 29</fax>
+        <email>poststelle@datenschutz.saarland.de</email>
+        <internet>http://www.datenschutz.saarland.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Sachsen">
+        <name>Der Sächsische Datenschutzbeauftragte</name>
+        <anschrift>Devrientstr. 1, 01067 Dresden</anschrift>
+        <telefon>0351 493 - 5401</telefon>
+        <fax>0351 493 - 5490</fax>
+        <email>saechsdsb@slt.sachsen.de</email>
+        <internet>http://www.datenschutz.sachsen.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Sachsen-Anhalt">
+        <name>Landesbeauftragter für den Datenschutz Sachsen Anhalt</name>
+        <anschrift>Postfach 19 47, 39009 Magdeburg
+Leiterstraße 9, 39104 Magdeburg</anschrift>
+        <telefon>0391 81803 - 0</telefon>
+        <fax>0391 81803 - 33</fax>
+        <email>poststelle@lfd.sachsen-anhalt.de</email>
+        <internet>http://www.datenschutz.sachsen-anhalt.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Schleswig-Holstein">
+        <name>Unabhängiges Landeszentrum für Datenschutz Schleswig-Holstein</name>
+        <anschrift>Postfach 71 16, 24171 Kiel
+Holstenstraße 98, 24103 Kiel</anschrift>
+        <telefon>0431 988 - 1200</telefon>
+        <fax>0431 988 - 1223</fax>
+        <email>mail@datenschutzzentrum.de</email>
+        <internet>http://www.datenschutzzentrum.de</internet>
+    </dsb>
+    <dsb land="Deutschland" bundesland="Thüringen">
+        <name>Der Thüringer Landesbeauftragte für den Datenschutz (TLFD)</name>
+        <anschrift>Postfach 90 04 55, 99107 Erfurt
+Häßlerstr. 8, 99096 Erfurt</anschrift>
+        <telefon>0361 3771 - 900</telefon>
+        <fax>0361 3771 - 904</fax>
+        <email>poststelle@datenschutz.thueringen.de</email>
+        <internet>http://www.thueringen.de/datenschutz</internet>
+    </dsb>
+</datenschutzbehörden>

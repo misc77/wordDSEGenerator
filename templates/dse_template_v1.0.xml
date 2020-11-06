@@ -10,10 +10,10 @@
 Firmenname:     {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[0]}
 Straße:         {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[1]}
 PLZ, Ort:       {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[2]}
-Land:           {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[3]}
-Tel:            {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[4]}
-Fax:            {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[5]}
-Email:          {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[6]}
+Land:           {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[4]}
+Tel:            {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[5]}
+Fax:            {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[6]}
+Email:          {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[7]}
 </Text>
         </Abschnitt>
         <Abschnitt titel="Datenschutzanfragen / Datenschutzbeauftragter"><Text>Sämtliche Anfragen zur Verarbeitung Ihrer personenbezogenen Daten oder die Ausübung Ihrer im Folgenden genannten Rechte richten Sie bitte per E-Mail, Fax oder Post an folgende Adresse:

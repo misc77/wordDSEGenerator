@@ -8,6 +8,7 @@ from dseGenerator import DSEGenerator
 from docGenerator import DocGenerator
 from checklistParser import parseChecklist
 from resources import Resources
+from dsblist import DSBList
 
 class DSEGeneratorApp(wx.Frame):
     """DSEGeneratorApp
@@ -269,7 +270,14 @@ class DSEGeneratorApp(wx.Frame):
             doc.parseTemplate(Resources.youtubeTemplate, self.version_text_xml.GetLabelText())
             self.docList.append(doc)
             self.status_text.SetLabelText("YouTube DSE Document successfully processed!")
-                
+
+        #Facebook DSE Document
+        if self.generator.checklistObject != None and toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'Facebook'):
+            doc = DocGenerator(self.generator.checklistObject, "Facebook_DSE")
+            doc.parseTemplate(Resources.facebookTemplate, self.version_text_xml.GetLabelText())
+            self.docList.append(doc)
+            self.status_text.SetLabelText("Facebook DSE Document successfully processed!")
+            
         self.save_button.Enable()     
 
     def reset(self):

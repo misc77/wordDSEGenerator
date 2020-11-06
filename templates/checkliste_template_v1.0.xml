@@ -257,6 +257,7 @@
         <alterativYoutube wordType="text"/>
         <facebook wordType="text"/>
         <alternativFacebook wordType="text"/>
+        <facebookTools wordType="checkboxlist"/>
         <twitter wordType="text"/>
         <alternativTwitter wordType="text"/>
         <instagramm wordType="text"/>

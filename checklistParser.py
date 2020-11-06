@@ -90,7 +90,6 @@ def parseCheckboxlist(xmlElement, checklistDocument):
                     if e.startswith("Hinweis:"):
                         continue
                     else: 
-                        log.debug("append key: " + e + "value: " + str(checkboxStatelist[i-1]) )
                         values[e] = checkboxStatelist[i-1]
             except (IndexError):
                 log.error("list index out of range!")

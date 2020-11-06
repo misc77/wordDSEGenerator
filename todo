@@ -23,4 +23,4 @@
 
 
 * Last Edit
-    - Output String for Filename, add hours minutes and second for generated time string
+    - determine dsb according to country and fill dse

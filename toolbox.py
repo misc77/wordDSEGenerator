@@ -1,3 +1,6 @@
+from dsblist import DSBList
+from dsb import DSB
+
 def contains(array, element):
         """[summary]Checks for element in list
         
@@ -39,3 +42,14 @@ def compare(dictionary, element, value, exact_match = False):
             else:
                 return (str(dictionary[item]) == str(value))
     return False 
+
+def determineDsb(country, state):
+    dsbText = ""
+    dsb = DSB()
+    dsblist = DSBList()
+    dsb = dsblist.getDSBbyCountryState(country, state)
+    if dsb is not None: 
+        dsbText = dsb.toString("\n")
+    
+    return dsbText
+        

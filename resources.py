@@ -12,14 +12,22 @@ class Resources:
     headerImage = "header.png"
     dseTemplate = "dse_template_v.xml"
     youtubeTemplate = "youtube_template_v.xml"
+    facebookTemplate = "facebook_template_v.xml"
     checklistTemplate = "checkliste_template_v.xml"
     logFile = "DSEGenerator.log"
+    dsbList = "/data/datenschutzbehoerden.xml"
 
     @staticmethod
     def getHeaderImage():
         """getHeaderImage: returns filename of Header image
         """
         return Resources.get_filename(Resources.graphicsPath + "/" + Resources.headerImage)
+
+    @staticmethod
+    def getDSBList():
+        """getDSBList: returns filename of list of datenschutzbehörden
+        """
+        return Resources.get_filename(Resources.dsbList)
 
     @staticmethod
     def getDSETemplate(template = dseTemplate, version = "1.0"):

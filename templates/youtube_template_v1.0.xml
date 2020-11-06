@@ -5,5 +5,74 @@
                 <Text>Wir betreiben auf der Plattform YouTube, einem Dienst der Google Ireland Limited, Google Building Gordon House, 4 Barrow St, Dublin, D04 E5W5, Irland, einen sogenannte Kanal, um mit den dort aktiven Besuchern (= Abonnenten), die unseren Kanal abonniert haben, zu kommunizieren und sie u. a. über unsere Produkte und Dienstleistungen zu informieren. Unsere Kanal erreichen Sie unter: {self.checklistObject.getText("socialMedia","youtube")}</Text> 
                 <Text>Wir weisen Sie darauf hin, dass Sie die YouTube-Seite und ihre Funktionen in eigener Verantwortung nutzen. Dies gilt insbesondere für die Nutzung der interaktiven Funktionen (z.B. Kommentieren, Teilen, Bewerten).</Text>
          </Abschnitt>
+         <Abschnitt titel="Kontaktdaten der gemeinsam Verantwortlichen">
+             <Text>Google Ireland Limited
+Google Building Gordon House
+4 Barrow St, Dublin, D04 E5W5
+Irland
+
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[0]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[1]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[2]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[3]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[4]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[5]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[6]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[7]}</Text>
+        </Abschnitt>
+        <Abschnitt titel="Datenschutzanfragen">
+            <Text>Sollten Sie Unterstzützung bei Anfragen oder der Ausübung der Betroffenenrechte gegenüber YouTube haben, setzen Sie sich mit uns bitte über folgende Kontaktdaten in Verbindung:
+
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[0]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[1]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[2]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[3]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[4]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[5]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[6]}</Text>
+        </Abschnitt>
+        <Abschnitt titel="Rechtsgrundlagen">
+            <Text>Die Datenverarbeitung bei Betrieb des Kanals erfolgt auf Grundlage unseres berechtigten Interesses gem. Art. 6 Abs.1 S. 1 lit. f DSGVO (Information über unsere Produkte und Dienstleistungen; Kommunikation mit Besuchern). Sofern YouTube eine Einwilligung der Besucher in die Datenverarbeitung einholt (z. B. über das Setzen eines Häkchens in einem Kontrollkästchen (Checkbox) oder Anklicken einer Schaltfläche), ist Rechtsgrundlage der Datenverarbeitung Art. 6 Abs. 1 S. 1 lit. a DSGVO.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Zwecke der Verarbeitung">
+            <Text>Besucher können innerhalb der Einstellungen von Google beeeinflussen, inwieweit Informationen zu ihrem Nutzungsverhalten beim Besuch unseres YouTube-Kanals erfasst werden dürfen (https://policies.google.com/privacy?gl=DE&amp;hl=de#infochoices). 
+Ferner nutzen wir unsere Profilseite, um mit unseren Kunden, Interessenten und Twitter-Besuchern zu kommunizieren und über unser Leistungsangebot zu informieren. In diesem Zusammenhang erhalten wir  gegebenenfalls weiteren Informationen, z.B. aufgrund von Besucherkommentaren, Privatnachrichten oder weil Sie uns folgen oder unsere Inhalte teilen. Die Verarbeitung erfolgt ausschließlich zum Zwecke der Kommunikation und Interaktion mit Ihnen</Text>
+        </Abschnitt>
+        <Abschnitt titel="Datenkategorien">
+            <Text>Die bei Betrieb eines Kanals verarbeiteten Daten hängen von den individuellen Einstellungen des Besuchers ab. Generell verarbeitet Google solche Daten, die der Betroffene selbst angibt (z. B. Beiträge, Kommentare, Aktivitäten), Geräteinformationen (z. B. Browsertyp, Mausbewegung, GPS-Standort) sowie Informationen von Partnern, die beispielsweise Social Plug-Ins oder Google Ads verwenden. Jedenfalls können aus den verarbeiteten Daten eindeutige Besuchercodes erstellt werden, um derartige Daten zu sammeln und zu verknüpfen.</Text>
+            <Text>Bei Betrieb eines Kanals werden insbesondere folgendes Besucherverhalten erfasst:</Text>
+            <Text>Hierbei handelt es sich u.a. um Ihre IP-Adresse, die genutzte Applikation, Angaben zu dem von Ihnen genutzten Endgerät (einschließlich Geräte-ID und Applikations-ID), Informationen aufgerufener Webseiten, Ihren Standort und Ihren Mobilfunkanbieter. Diese Daten werden den Daten Ihres YouTube-Kanals bzw. Ihrem YouTube-Kanal zugeordnet.</Text>
+            <Text>Wir haben keinen Einfluss auf Art und Umfang der durch Google verarbeiteten Daten, die Art der Verarbeitung und Nutzung oder die Weitergabe dieser Daten an Dritte. </Text>
+            <Text>Über in Webseiten eingebundene Google-Buttons oder -Widgets und die Verwendung von Cookies ist es Google möglich, Ihre Besuche auf diesen Webseiten zu erfassen und Ihrem Twitter-Profil zuzuordnen. Anhand dieser Daten können Inhalte oder Werbung auf Sie zugeschnitten angeboten werden.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Dauer der Speicherung">
+            <Text>YouTube speichert Daten, bis sie nicht mehr benötigt werden, um die Dienste und Google-Produkte bereitzustellen, oder bis das Besucherkonto gelöscht wird, je nach dem, was zuerst eintritt. Dies ist eine Einzelfallbestimmung und hängt von Kriterien ab wie der Art der Daten, warum sie erfasst und verarbeitet werden sowie den relevanten rechtlichen oder betrieblichen Speicherbedürfnissen.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Weitergabe von Daten">
+            <Text>Die Daten der Besucher werden von der Google Ireland Limited an die Google LLC, 1600 Amphitheatre Parkway Mountain View, CA 94043 in die USA weitergegeben. Google bedient sich der Standardvertragsklauseln der Europäischen Union als Rechtsgrundlage zur Weitergabe. 
+Ob Daten aus einem Besuch der YouTube-Seite an Dritte weitergegeben werden, wird von Google nicht abschließend und klar benannt und ist uns nicht bekannt.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Betroffenenrechte">
+            <Text>Sofern Auskunftsverlangen oder sonstige Betroffenenrechte nach der DSGVO geltend gemacht werden, weisen wir darauf hin, dass diese am effektivsten bei Google selbst geltend gemacht werden können. Als Betreiber des Kanal haben wir grundsätzlich keinen Zugriff auf die Daten, die von Google verarbeitet werden. Nur Google alleine kann auf die Daten der Besucher zugreifen und daher vollumfänglich Auskünfte erteilen oder sonstigen Maßnahmen, wie z. B. Löschungsverlangen der Besucher, umsetzen. Zu diesen Zwecken bietet. Zur Unterstützung der Ausübung von Betroffenenrechten können wir jederzeit kontaktiert werden.</Text>
+            <Text>Im Einzelnen haben Sie als Betroffener folgende Rechte:</Text>
+            <Text>Sie haben das Recht, jederzeit unentgeltlich Auskunft und eine Kopie über Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten (s. Art. 15 DSGVO).</Text>
+            <Text>Sie haben das Recht auf Berichtigung oder Vervollständigung Ihrer ggfs. unrichtig gespeicherten Daten (s. Art. 16 DSGVO).</Text>
+            <Text>Sie haben auch das Recht auf Einschränkung der Verarbeitung Ihrer Daten (s. Art. 18 DSGVO) und das Recht auf Löschung Ihrer Daten (s. Art. 17 DSGVO). Eine Löschung Ihrer Daten ist nicht möglich, soweit wir verpflichtet sind, die Daten zur Vertragsabwicklung oder aufgrund sonstiger gesetzlicher Aufbewahrungspflichten weiterhin zu speichern. Statt der Löschung nehmen wir eine Sperrung Ihrer Daten vor.</Text>
+            <Text>Sie haben zudem das Recht, Ihre bei uns gespeicherten Daten herauszuverlangen und an ein anderes Unternehmen zu übertragen bzw. von uns übertragen zu lassen (s. Art. 20 DSGVO).</Text>
+            <Text>Sie haben des Weiteren das Recht, der künftigen Verarbeitung der Sie betreffenden Daten zu widersprechen (s. Art. 21 DSGVO).</Text>
+            <Text>Ferner haben Sie das Recht, erteilte Einwilligungen für die Zukunft zu widerrufen (s. Art. 7 Abs. 3 DSGVO).</Text>
+            <Text>Beschwerden können an die zuständigen Datenschutz-Aufsichtsbehörden gerichtet werden (s. Art. 77 DSGVO):</Text>
+            <Text>Zuständige Datenschutzbehörde von Google innerhalb der EU:
+Data Protection Commission
+Canal House, Station Road, Partarlington, Co. Laois, R32 AP23, Ireland
+Phone: +353 (0761) 104 800
+Call: 1890 25 22 31
+Fax: +353 57 868 4757 
+E-Mail: info@dataprotection.ie</Text>
+            <Text>Zuständige Datenschutzbehörde von {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[0]}:
+{toolbox.determineDsb(self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[4], self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[3])}
+            </Text>
+            <Text>Weitere Informationen zum Zweck und Umfang der Datenerhebung und ihrer Verarbeitung sowie zu Ihren Rechten als Betroffene i. S. d. DSGVO und Ihre Widerspruchs- und Einstellungsmöglichkeiten, um Ihre personenbezogenen Daten auf YouTube zu schützen, erhalten Sie in der Datenschutzerklärung von Google: https://policies.google.com/privacy?gl=DE&amp;hl=de</Text>
+        </Abschnitt>
     </Kapitel>
 </DSEDokument>
