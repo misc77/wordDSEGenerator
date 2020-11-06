@@ -13,6 +13,8 @@ class Resources:
     dseTemplate = "dse_template_v.xml"
     youtubeTemplate = "youtube_template_v.xml"
     facebookTemplate = "facebook_template_v.xml"
+    instagramTemplate = "instagram_template_v.xml"
+    twitterTemplate = "twitter_template_v.xml"
     checklistTemplate = "checkliste_template_v.xml"
     logFile = "DSEGenerator.log"
     dsbList = "/data/datenschutzbehoerden.xml"

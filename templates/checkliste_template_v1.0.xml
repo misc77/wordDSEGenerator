@@ -260,8 +260,8 @@
         <facebookTools wordType="checkboxlist"/>
         <twitter wordType="text"/>
         <alternativTwitter wordType="text"/>
-        <instagramm wordType="text"/>
-        <alternativInstagramm wordType="text"/>
+        <instagram wordType="text"/>
+        <alternativInstagram wordType="text"/>
         <plugin wordType="checkboxlist"/>
         <shariff wordType="yesnolist"/>
         <buttons wordType="yesnolist"/>

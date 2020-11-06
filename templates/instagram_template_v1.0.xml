@@ -1,0 +1,100 @@
+<?xml version="1.0" ?>
+<DSEDokument version="1.0">
+    <Kapitel titel="Datenverarbeitung über unsere Instagram-Profilseite">
+        <Abschnitt titel="Verantwortlichkeit">
+                <Text>Wir betreiben auf der Social Media Plattform Instagram, einem Dienst der Facebook Ireland Ltd., 4 Grand Canal Square Grand Canal Harbour, Dublin 2, Ireland, eine sogenannte Profilseite, um mit den dort aktiven Besuchern (= Abonnenten), die unsere Profilseite abonniert haben, zu kommunizieren und sie u. a. über unsere Produkte und Dienstleistungen zu informieren. Unsere Profilseite erreichen Sie unter: {self.checklistObject.getText("socialMedia","instagram")}</Text> 
+                <Text>Wir haben mit Facebook eine Vereinbarung über die gemeinsame Verantwortlichkeit nach Art. 26 DSGVO abgeschlossen, die die Verteilung der datenschutzrechtlichen Verpflichtungen regelt (https://www.facebook.com/legal/terms/page_controller_addendum).</Text>
+                <Text>Instagram übernimmt dabei insbesondere die Pflichten zur Information der Besucher, zur Datensicherheit und zur Meldung von Datenverstößen und gilt vorrangig als Ansprechpartner zur Ausübung der Betroffenenrechte.</Text>
+                <Text>Wir weisen Sie darauf hin, dass Sie diese Instagram-Seite und ihre Funktionen in eigener Verantwortung nutzen. Dies gilt insbesondere für die Nutzung der interaktiven Funktionen (z.B. Kommentieren, Teilen, Bewerten).</Text>
+                <Text cond="self.checklistObject.getText('socialMedia','alternativInstagram')!= '#EMPTY'">Alternativ können Sie die über diese Seite angebotenen Informationen auch auf unserem Internet-Angebot unter {self.checklistObject.getText('socialMedia','alternativInstagram')} abrufen</Text>
+            </Abschnitt>
+         <Abschnitt titel="Kontaktdaten der gemeinsam Verantwortlichen">
+             <Text>Facebook Ireland Ltd. 
+4 Grand Canal Square
+Grand Canal Harbour
+D2 Dublin
+Ireland
+
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[0]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[1]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[2]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[3]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[4]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[5]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[6]}
+{self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[7]}</Text>
+        </Abschnitt>
+        <Abschnitt titel="Datenschutzanfragen">
+            <Text>Sollten Sie Unterstzützung bei Anfragen oder der Ausübung der Betroffenenrechte gegenüber YouTube haben, setzen Sie sich mit uns bitte über folgende Kontaktdaten in Verbindung:
+
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[0]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[1]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[2]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[3]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[4]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[5]}
+{self.checklistObject.elementList["dsb"]["adresse"].split("\n")[6]}</Text>
+        </Abschnitt>
+        <Abschnitt titel="Rechtsgrundlagen">
+            <Text>Die Datenverarbeitung bei Betrieb des Kanals erfolgt auf Grundlage unseres berechtigten Interesses gem. Art. 6 Abs.1 S. 1 lit. f DSGVO (Information über unsere Produkte und Dienstleistungen; Kommunikation mit Besuchern). Sofern YouTube eine Einwilligung der Besucher in die Datenverarbeitung einholt (z. B. über das Setzen eines Häkchens in einem Kontrollkästchen (Checkbox) oder Anklicken einer Schaltfläche), ist Rechtsgrundlage der Datenverarbeitung Art. 6 Abs. 1 S. 1 lit. a DSGVO.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Zwecke der Verarbeitung">
+            <Text>Die Verarbeitung der durch Insights erzeugten Informationen soll uns ermöglichen, Statistiken zu erhalten, die Instagram aufgrund der Besuche unserer Profilseite erstellt, um die Vermarktung unserer Tätigkeit zu steuern. So können wir Kenntnisse erlangen von den Profilen der Besucher sowie über ihr Nutzungsverhalten von Anwendungen auf unserer Profilseite. Dies ermöglicht uns, innerhalb und außerhalb von Instagram relevantere Inhalte und Funktionen bereit zu stellen, die für Sie von höherem Interesse sein könnten.</Text>
+            <Text>Damit wir erkennen, wie wir mit unserer Profilseite unsere Geschäftsziele besserer erreichen können, werden darüber hinaus anhand der erfassten Informationen auch demografische und geografische Daten ausgewertet und uns zur Verfügung gestellt. Diese Informationen können wir verwenden, um personalisierte Werbeanzeigen zu schalten, ohne unmittelbar Kenntnis von der Identität des Besuchers zu erhalten. Sofern Besucher Instagram auf mehreren Endgeräten verwenden, kann die Erfassung und Auswertung auch Geräte übergreifend erfolgen, wenn es sich um registrierte und jeweils im eigenen Profil eingeloggte Besucher handelt.</Text>
+            <Text>Besucher können innerhalb der Einstellungen für Werbepräferenzen beeeinflussen, inwieweit Informationen zu ihrem Nutzungsverhalten beim Besuch unserer Facebook-Seite erfasst werden dürfen (https://www.facebook.com/ads/preferences).</Text>
+            <Text>Ferner nutzen wir unsere Profilseite, um mit unseren Kunden, Interessenten und Instagram-Besuchern zu kommunizieren und über unser Leistungsangebot zu informieren. In diesem Zusammenhang erhalten wir  gegebenenfalls weiteren Informationen, z.B. aufgrund von Besucherkommentaren, Privatnachrichten oder weil Sie uns folgen oder unsere Inhalte teilen. Die Verarbeitung erfolgt ausschließlich zum Zwecke der Kommunikation und Interaktion mit Ihnen.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Datenkategorien">
+            <Text>Die bei Betrieb einer Profilseite verarbeiteten Daten hängen von den individuellen Einstellungen des Besuchers ab. Generell verarbeitet Instagram solche Daten, die der Betroffene selbst angibt (z. B. Beiträge, Kommentare, Aktivitäten), Geräteinformationen (z. B. Browsertyp, Mausbewegung, GPS-Standort) sowie Informationen von Partnern, die beispielsweise Social Plug-Ins oder Facebook agram Pixel verwenden. Jedenfalls können aus den verarbeiteten Daten eindeutige BeBesuchercodes erstellt werden, um derartige Daten zu sammeln und zu verknüpfen.</Text>
+            <Text>Bei Betrieb eines Kanals werden insbesondere folgendes Besucherverhalten erfasst:</Text>
+            <Text>• Aufrufen einer Seite bzw. eines Beitrags oder eines Videos von einer Seite
+• Eine Seite abonnieren oder nicht mehr abonnieren
+• Eine Seite oder einen Beitrag mit „Gefällt mir“ oder „Gefällt mir nicht mehr“ markieren
+• Eine Seite in einem Beitrag oder Kommentar empfehlen
+• Einen Seitenbeitrag kommentieren, teilen oder auf ihn reagieren
+• Einen Seitenbeitrag verbergen oder als Spam melden
+• Von einer anderen Seite auf Instagram oder von einer Webseite außerhalb von Instagram auf einen Link klicken, der zu der Seite führt
+• Auf den Webseiten-, Telefonnummer-, „Route planen“-Button oder einen anderen Button auf einer Seite klicken
+• Die Information, ob du über einen Computer oder ein Mobilgerät angemeldet bist, während du eine Seite besuchst oder mit ihr bzw. ihren Inhalten interagierst</Text>
+            <Text>Wenn Sie als Besucherin oder Besucher aktuell bei Instagram angemeldet sind, befindet sich auf Ihrem Endgerät ein Cookie mit Ihrer Facebook-Kennung. Dadurch ist Instagram in der Lage nachzuvollziehen, dass Sie diese Seite aufgesucht und wie Sie sie genutzt haben. Dies gilt auch für alle anderen Instagram-Seiten. Über in Webseiten eingebundene Instagram-Buttons ist es Instagram möglich, Ihre Besuche auf diesen Webseiten Seiten zu erfassen und Ihrem Instagram-Profil zuzuordnen. Anhand dieser Daten können Inhalte oder Werbung auf Sie zugeschnitten angeboten werden. 
+                Wenn Sie dies vermeiden möchten, sollten Sie sich bei Instagram abmelden bzw. die Funktion "angemeldet bleiben" deaktivieren, die auf Ihrem Gerät vorhandenen Cookies löschen und Ihren Browser beenden und neu starten. Auf diese Weise werden Instagram-Informationen, über die Sie unmittelbar identifiziert werden können, gelöscht.</Text>
+            <Text>Die über Facebook Insights erstellten Besucherstatistiken werden ausschließlich in anonymisiertet Form an uns übermittelt. Wir haben keinen Zugang zu den jeweils zugrundliegenden Daten.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Cookies und Insights">
+            <Text>Beim Besuch unserer Profilseite verarbeitet Facebook Cookies und erfasst u. a Ihre IP-Adresse (nach eigenen Angaben anonymisiert) sowie weitere Informationen, die in Form von Cookies auf Ihrem PC vorhanden sind. Diese Informationen werden verwendet, um uns als Betreiber der Instagram-Seiten statistische Informationen über die Inanspruchnahme der Instagram-Seite zur Verfügung zu stellen. Nähere Informationen hierzu stellt Instagram unter folgendem Link zur Verfügung: http://de-de.facebook.com/help/pages/insights. Weitere Informationen zum Einsatz von Cookies durch Instagram finden Sie unter https://www.facebook.com/policies/cookies/.
+Instagram bietet die Möglichkeiten, Cookies durch ein Opt-Out zu entfernen: https://www.facebook.com/settings?tab=ads</Text>
+            <Text>Es besteht die Möglichkeit, dass Instagram im Local Storage, einem Webspeicher, durch den Javascript-Webseiten und –Apps Daten im Browser speichern können, die auch nach Schließen des Browserfensters erhalten bleiben, Einträge erzeugt. Hierbei können mehr Daten ohne Ablaufdatum auf dem Gerät gespeichert werden als bei der Verwendung von Cookies. So kann der Datenfluss zwischen Client und Server reduziert und dadurch die Performance von Anwendungen verbessert werden.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Dauer der Speicherung">
+            <Text>Instagram speichert Daten, bis sie nicht mehr benötigt werden, um die Dienste und Instagram-Produkte bereitzustellen, oder bis das BeBesucherkonto gelöscht wird, je nach dem, was zuerst eintritt. Dies ist eine Einzelfallbestimmung und hängt von Kriterien ab wie der Art der Daten, warum sie erfasst und verarbeitet werden sowie den relevanten rechtlichen oder betrieblichen Speicherbedürfnissen.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Weitergabe von Daten">
+            <Text>Die Daten der Besucher werden von der Facebook Ireland Ltd. an die Instagram Inc., 1 Hacker Way, Menlo Park, CA 94025 in die USA weitergegeben. Facebook bedient sich der Standardvertragsklauseln der Europäischen Union als Rechtsgrundlage zur Weitergabe.
+                Ob Daten aus einem Besuch der Instagram-Seite an Dritte weitergegeben werden, wird von Instagram nicht abschließend und klar benannt und ist uns nicht bekannt.</Text>
+        </Abschnitt>
+        <Abschnitt titel="Betroffenenrechte">
+            <Text>Sofern Auskunftsverlangen oder sonstige Betroffenenrechte nach der DSGVO geltend gemacht werden, weisen wir darauf hin, dass diese am effektivsten bei Facebook selbst geltend gemacht werden können. Als Betreiber der Profilseite haben wir grundsätzlich keinen Zugriff auf die Daten, die von Facebook verarbeitet werden. Nur Facebook alleine kann auf die Daten der Besucher zugreifen und daher vollumfänglich Auskünfte erteilen oder sonstigen Maßnahmen, wie z. B. Löschungsverlangen der Besucher, umsetzen. Zu diesen Zwecken bietet Instagram ein Formular an (https://www.facebook.com/help/contact/367438723733209). Zur Unterstützung der Ausübung von Betroffenenrechten können wir jederzeit kontaktiert werden.</Text>
+            <Text>Im Einzelnen haben Sie als Betroffener folgende Rechte:</Text>
+            <Text>Sie haben das Recht, jederzeit unentgeltlich Auskunft und eine Kopie über Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten (s. Art. 15 DSGVO).</Text>
+            <Text>Sie haben das Recht auf Berichtigung oder Vervollständigung Ihrer ggfs. unrichtig gespeicherten Daten (s. Art. 16 DSGVO).</Text>
+            <Text>Sie haben auch das Recht auf Einschränkung der Verarbeitung Ihrer Daten (s. Art. 18 DSGVO) und das Recht auf Löschung Ihrer Daten (s. Art. 17 DSGVO). Eine Löschung Ihrer Daten ist nicht möglich, soweit wir verpflichtet sind, die Daten zur Vertragsabwicklung oder aufgrund sonstiger gesetzlicher Aufbewahrungspflichten weiterhin zu speichern. Statt der Löschung nehmen wir eine Sperrung Ihrer Daten vor.</Text>
+            <Text>Sie haben zudem das Recht, Ihre bei uns gespeicherten Daten herauszuverlangen und an ein anderes Unternehmen zu übertragen bzw. von uns übertragen zu lassen (s. Art. 20 DSGVO).</Text>
+            <Text>Sie haben des Weiteren das Recht, der künftigen Verarbeitung der Sie betreffenden Daten zu widersprechen (s. Art. 21 DSGVO).</Text>
+            <Text>Ferner haben Sie das Recht, erteilte Einwilligungen für die Zukunft zu widerrufen (s. Art. 7 Abs. 3 DSGVO).</Text>
+            <Text>Beschwerden können an die zuständigen Datenschutz-Aufsichtsbehörden gerichtet werden (s. Art. 77 DSGVO):</Text>
+            <Text>Zuständige Datenschutzbehörde von Facebook innerhalb der EU:
+Data Protection Commission
+Canal House, Station Road, Partarlington, Co. Laois, R32 AP23, Ireland
+Phone: +353 (0761) 104 800
+Call: 1890 25 22 31
+Fax: +353 57 868 4757 
+E-Mail: info@dataprotection.ie</Text>
+            <Text>Zuständige Datenschutzbehörde von {self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[0]}:
+{toolbox.determineDsb(self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[4], self.checklistObject.elementList["verantwortlicher"]["adresse"].split("\n")[3])}
+            </Text>
+            <Text>Weitere Informationen zum Zweck und Umfang der Datenerhebung und ihrer Verarbeitung sowie zu Ihren Rechten als Betroffene i. S. d. DSGVO und Ihre Widerspruchs- und Einstellungsmöglichkeiten, um Ihre personenbezogenen Daten auf Facebook zu schützen, erhalten Sie in der Datenschutzerklärung von Facebook:
+Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland - Datenschutzerklärung: https://www.facebook.com/about/privacy/. 
+Vollständige Datenrichtlinien: https://de-de.facebook.com/full_data_use_policy.</Text>
+        </Abschnitt>
+    </Kapitel>
+</DSEDokument>

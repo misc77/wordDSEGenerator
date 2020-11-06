@@ -277,6 +277,20 @@ class DSEGeneratorApp(wx.Frame):
             doc.parseTemplate(Resources.facebookTemplate, self.version_text_xml.GetLabelText())
             self.docList.append(doc)
             self.status_text.SetLabelText("Facebook DSE Document successfully processed!")
+
+        #Instagram DSE Document
+        if self.generator.checklistObject != None and toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'Instagram'):
+            doc = DocGenerator(self.generator.checklistObject, "Instagram_DSE")
+            doc.parseTemplate(Resources.instagramTemplate, self.version_text_xml.GetLabelText())
+            self.docList.append(doc)
+            self.status_text.SetLabelText("Instagram DSE Document successfully processed!")
+        
+        #Twitter DSE Document
+        if self.generator.checklistObject != None and toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'Twitter'):
+            doc = DocGenerator(self.generator.checklistObject, "Twitter_DSE")
+            doc.parseTemplate(Resources.twitterTemplate, self.version_text_xml.GetLabelText())
+            self.docList.append(doc)
+            self.status_text.SetLabelText("Twitter DSE Document successfully processed!")
             
         self.save_button.Enable()     
 
