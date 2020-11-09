@@ -1,0 +1,279 @@
+<?xml version="1.0" ?>
+<checkliste xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Datenschutzerklärung" version="1.0">
+    <input>
+        <titel wordType="table" tabelle="1">
+                <intro></intro>
+                <titel></titel>
+                <version spalte="1"></version>
+                <addresse spalte="1"></addresse>
+        </titel>
+        <verantwortlicher wordType="table" tabelle="2">
+                <titel wordType="text"></titel>
+                <adresse spalte="2" wordType="text"> </adresse>
+        </verantwortlicher>
+        <dsb wordType="table" tabelle="3">
+                <titel wordType="text"></titel>
+                <hinweis wordType="text"></hinweis>
+                <adresse spalte="2" wordType="text"></adresse>
+        </dsb>
+        <host wordType="table" tabelle="4">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <name spalte="2" wordType="text"/>
+                <avv wordType="yesnolist"/>
+        </host>
+        <zugriffsdaten wordType="table" tabelle="5">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <inhalt wordType="checkboxlist"/>
+                <anonymisiert wordType="yesnolist"/>
+                <dauer wordType="text"/> 
+        </zugriffsdaten>
+        <matomo wordType="table" tabelle="6">
+                <titel wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <anonymizeVisitorsIP wordType="yesnolist"/>
+                <doNotTrack wordType="yesnolist"/>
+        </matomo>
+        <googleanalytics wordType="table" tabelle="7">
+                <titel wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <optOutLink wordType="text"/>
+                <ipAnonymisierung wordType="yesnolist"/>
+        </googleanalytics>
+        <googleuniversal wordType="table" tabelle="8">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <browserAddon wordType="checkboxlist"/>
+        </googleuniversal>
+        <etracker wordType="table" tabelle="9">
+                <titel wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <cookies wordType="yesnolist"/>
+                <anonymisiert wordType="checkboxlist"/>
+        </etracker>
+        <adobeanalytics wordType="table" tabelle="10">
+                <titel wordType="text"/>  
+                <verwendung wordType="yesnolist"/>
+                <anonymisiert wordType="yesnolist"/>
+                <browserAddon wordType="yesnolist"/>
+        </adobeanalytics>
+        <wiredminds wordType="table" tabelle="11">
+                <titel wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <browserAddon wordType="yesnolist"/>
+        </wiredminds>
+        <szm wordType="table" tabelle="12">
+                <titel wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <applikation wordType="yesnolist"/>
+                <browserAddon wordType="yesnolist"/>
+        </szm>
+        <wordpressjetpack wordType="table" tabelle="13">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <browserAddon wordType="yesnolist"/>
+        </wordpressjetpack>
+        <remarketing wordType="table" tabelle="14">
+                <titel wordType="text"/>
+                <tools wordType="checkboxlist"/>
+                <optout wordType="yesnolist"/>
+        </remarketing>
+        <facebookpixel wordType="table" tabelle="15">
+                <titel wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <customAudience wordType="yesnolist"/>
+                <conversionTracking wordType="yesnolist"/>
+        </facebookpixel>
+        <hinweis wordType="table" tabelle="16">
+                <hinweis wordType="text"/>
+        </hinweis>
+        <kontaktformular wordType="table" tabelle="17">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <kanal wordType="checkboxlist"/>
+                <daten wordType="checkboxlist"/>
+                <dauer wordType="text"/>
+                <speicherort wordType="checkboxlist"/>
+                <weiterleitung wordType="yesnolist"/>
+                <dritte wordType="text"/>
+                <zweck wordType="checkboxlist"/>
+                <verschluesselung wordType="yesnolist"/>
+                <technik wordType="text"/>
+        </kontaktformular>
+        <newsletter wordType="table" tabelle="18">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <anmeldedaten wordType="checkboxlist"/>
+                <speicherdauer wordType="text"/>
+                <weiterleitung wordType="yesnolist"/>
+                <dritte wordType="text"/>
+                <inhalt wordType="checkboxlist"/>
+                <frequenz wordType="text"/>
+                <opt-in wordType="yesnolist"/>
+                <abmeldelink wordType="yesnolist"/>
+                <widerrufsrecht wordType="yesnolist"/>
+                <versand wordType="checkboxlist"/>
+                <adv wordType="yesnolist"/>
+                <aenderungsinfo wordType="checkboxlist"/>
+                <verschluesselung wordType="yesnolist"/>
+                <technik wordType="text"/>
+                <klicks wordType="yesnolist"/>
+                <daten wordType="checkboxlist"/>
+                <anonymisiert wordType="checkboxlist"/>
+            </newsletter>
+            <spende wordType="table" tabelle="19">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <ueberweisung wordType="yesnolist"/>
+                <formular wordType="yesnolist"/>
+                <finanzamt wordType="text"/>
+                <daten wordType="checkboxlist"/>
+                <moeglichkeiten wordType="checkboxlist"/>
+                <moeglichkeitenDaten wordType="checkboxlist"/>
+                <dauer wordType="text"/>
+                <dritte wordType="text"/>
+                <verschluesselung wordType="text"/>
+            </spende>
+            <gewinnspiele wordType="table" tabelle="20">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <art wordType="text"/>
+                <daten wordType="checkboxlist"/>
+                <oeffentlich wordType="yesnolist"/>
+                <pseudonymisiert wordType="yesnolist"/>
+                <veroeffentlichung wordType="text"/>
+                <benachrichtigung wordType="text"/>
+                <dauer wordType="text"/>
+                <weiterleitung wordType="text"/>
+                <erhebung wordType="text"/>
+                <versand wordType="text"/>
+                <optin wordType="yesnolist"/>
+                <verschluesselung wordType="yesnolist"/>
+                <technik wordType="text"/>
+            </gewinnspiele>
+            <blog wordType="table" tabelle="21">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <daten wordType="checkboxlist"/>
+                <datenSpeicherung wordType="checkboxlist"/>
+                <dauer wordType="text"/>
+                <weiterleitung wordType="text"/>
+                <erhebung wordType="text"/>
+                <abonnement wordType="yesnolist"/>
+                <optin wordType="yesnolist"/>
+                <ekomi wordType="yesnolist"/>
+                <verschluesselung wordType="yesnolist"/>
+                <technik wordType="text"/>
+            </blog>
+            <disqus wordType="table" tabelle="22">
+                <verwendung wordType="yesnolist"/>
+                <dauer wordType="text"/>
+                <weiterleitung wordType="text"/>
+                <erhebung wordType="text"/>
+                <abonnement wordType="yesnolist"/>
+                <optin wordType="yesnolist"/>
+                <verschluesselung wordType="yesnolist"/>
+                <technik wordType="text"/>
+            </disqus>
+            <bewerberportal wordType="table" tabelle="23">
+                <hinweis wordType="text"/>
+                <unterseite wordType="yesnolist"/>
+                <onlineformular wordType="checkboxlist"/>
+                <daten wordType="checkboxlist"/>
+                <sensibleDaten wordType="yesnolist"/>
+                <details wordType="text"/>
+                <dauer wordType="text"/>
+                <weiterleitung wordType="yesnolist"/>
+                <dritte wordType="text"/>
+                <optin wordType="yesnolist"/>
+                <talentpool wordType="yesnolist"/>
+                <verschluesselung wordType="yesnolist"/>
+                <technik wordType="text"/>
+            </bewerberportal>
+            <webshop wordType="table" tabelle="24">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <verwendung wordType="yesnolist"/>
+                <gast wordType="yesnolist"/>
+                <datenErhebung wordType="checkboxlist"/>
+                <kundenaccount wordType="yesnolist"/>
+                <kundendaten wordType="checkboxlist"/>
+                <sensibleDaten wordType="yesnolist"/>
+                <verwendungSensibleDaten wordType="text"/>
+                <dauer wordType="text"/>
+                <weiterleitung wordType="yesnolist"/>
+                <empfaenger wordType="checkboxlist"/>
+                <datenDritter wordType="checkboxlist"/>
+                <findologic wordType="yesnolist"/>
+                <verschluesselung wordType="yesnolist"/>
+                <technik wordType="text"/>
+            </webshop>
+            <sonstigeregistrierung wordType="table" tabelle="25">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <sonstigeregistrierung wordType="yesnolist"/>
+                <art wordType="text"/>
+                <erforderlich wordType="text"/>
+                <daten wordType="checkboxlist"/>
+                <sonstigedaten wordType="checkboxlist"/>
+                <speicherdauer wordType="text"/>
+                <weiterleitung wordType="text"/>
+                <aenderung wordType="yesnolist"/>
+                <optin wordType="yesnolist"/>
+                <loeschung wordType="yesnolist"/>
+                <verschluesselung wordType="yesnolist"/>
+                <technik wordType="text"/>
+                <aenderungsinfo wordType="checkboxlist"/>
+            </sonstigeregistrierung>
+            <zahlungsdienstleister wordType="table" tabelle="26">
+                <titel wordType="text"/>
+                <anbieter wordType="checkboxlist"/>
+            </zahlungsdienstleister>
+            <partnerlinks wordType="table" tabelle="27">
+                <titel wordType="text"/>
+                <programm wordType="checkboxlist"/>
+            </partnerlinks>
+            <sonstigeTools wordType="table" tabelle="28">
+                <titel wordType="text"/>
+                <tools wordType="checkboxlist"/>
+            </sonstigeTools>
+            <datentransferAusland wordType="table" tabelle="29">
+                <titel wordType="text"/>
+                <daten wordType="checkboxlist"/>
+                <verschluesselung wordType="yesnolist"/>
+                <technik wordType="text"/>
+            </datentransferAusland>
+            <socialMedia wordType="table" tabelle="30">
+                <titel wordType="text"/>
+                <hinweis wordType="text"/>
+                <praesenzen wordType="checkboxlist"/>
+                <youtube wordType="text"/>
+                <alterativYoutube wordType="text"/>
+                <facebook wordType="text"/>
+                <alternativFacebook wordType="text"/>
+                <facebookTools wordType="checkboxlist"/>
+                <twitter wordType="text"/>
+                <alternativTwitter wordType="text"/>
+                <instagram wordType="text"/>
+                <alternativInstagram wordType="text"/>
+                <plugin wordType="checkboxlist"/>
+                <shariff wordType="yesnolist"/>
+                <buttons wordType="yesnolist"/>
+                <buttonsShariff wordType="yesnolist"/>
+        </socialMedia>
+    </input>
+    <output>
+        <doc name="main_dse" template="dse_template_v1.0.xml" cond=""/>
+        <doc name="facebook_dse" template="facebook_template_v1.0.xml" cond="toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'Facebook')"/>
+        <doc name="instagram_dse" template="instagram_template_v1.0.xml" cond="toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'Instagram')"/>
+        <doc name="youtube_dse" template="youtube_template_v1.0.xml" cond="toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'YouTube')"/>
+        <doc name="twitter_dse" template="twitter_template_v1.0.xml" cond="toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'Twitter')"/>
+    </output>
+</checkliste>

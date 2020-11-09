@@ -1,6 +1,7 @@
 from docx import Document
 from xmlObject import XMLObject
 from resources import Resources
+
 import xml.etree.ElementTree as ET
 import const
 import logging
@@ -21,16 +22,22 @@ def isWordTypeDynamicTable(child):
 def isWordTypeTextInput(child):
     return (child.attrib.get(const.CHECKLIST_ATTRIB_WORDTYPE) == const.CHECKLIST_ATTRIB_WORDTYPE_TEXTINPUT)
 
-def readVersion(checklistDocument):
-    log = logging.getLogger("DSEGenerator.readVersion")
+def isInput(child):
+    return (child.tag == const.CHECKLIST_INPUT_DOC)
+
+def isOutput(child):
+    return (child.tag == const.CHECKLIST_OUTPUT_DOC)
+
+def readTemplate(checklistDocument):
+    log = logging.getLogger("DSEGenerator.readTemplate")
     try:
-        version = checklistDocument.tables[0].table.cell(1, 0).text
-        if version is None:
-            version = "1.0"
-        return version
+        template = checklistDocument.tables[0].table.cell(1, 0).text
+        if template is None:
+            template = const.CHECKLIST_TEMPLATE_INVALID
+        return template
     except (IndexError):
         log.error("list index out of range!")
-        wx.MessageBox("Can't determine version of selected Document! Processing aborted. Please select another one!", caption="Error occured!")
+        wx.MessageBox("Can't determine XML-template of selected Document! Processing aborted. Please select another one!", caption="Error occured!")
 
 def getTagContent(tag):
     text = ""
@@ -156,32 +163,36 @@ def parseChecklist(checklistFile):
         checklistDocument = None
 
     if checklistDocument is not None:
-        version = readVersion(checklistDocument)
-        checklistTemplate = Resources.getChecklisteTemplate(version)
-        try:
-            tree = ET.parse(checklistTemplate) 
-        except Exception as e:
-            log.error("Checklist Template '" + checklistTemplate + "' could not be read! " + str(e))
-            tree = None
+        template = readTemplate(checklistDocument)
+        if template != const.CHECKLIST_TEMPLATE_INVALID:
+            checklistTemplate = Resources.getChecklisteTemplate(template)
+            try:
+                tree = ET.parse(checklistTemplate) 
+            except Exception as e:
+                log.error("Checklist Template '" + checklistTemplate + "' could not be read! " + str(e))
+                tree = None
+                checklistObject = None
+            except (FileNotFoundError):
+                wx.MessageBox("Error occured when opening Checklist Template! " + FileNotFoundError.strerror, caption="Error occured!")
+                log.error("Checklist Template '" + checklistTemplate + "' could not be found! " + FileNotFoundError.strerror)
+
+            if tree != None:
+                root = tree.getroot()
+                checklistObject = XMLObject()
+                checklistObject.setTemplate(checklistTemplate)
+                for docs in root:
+                    if isInput(docs):
+                        for elem in docs:
+                            if isWordTypeTable(elem):
+                                checklistObject.addElement(elem.tag, parseTable(elem, checklistDocument))
+                    if isOutput(docs):
+                        for elem in docs:
+                            checklistObject.addOutputDoc(       elem.attrib.get(const.CHECKLIST_ATTRIB_NAME)
+                                                            ,   elem.attrib.get(const.CHECKLIST_ATTRIB_TEMPLATE)
+                                                            ,   elem.attrib.get(const.CHECKLIST_ATTRIB_COND))
+        else:
+            log.error("Processing of Template skipped because of invalid Template!")
             checklistObject = None
-        except (FileNotFoundError):
-            wx.MessageBox("Error occured when opening Checklist Template! " + FileNotFoundError.strerror, caption="Error occured!")
-            log.error("Checklist Template '" + checklistTemplate + "' could not be found! " + FileNotFoundError.strerror)
-
-        if tree != None:
-            root = tree.getroot()
-            checklistObject = XMLObject()
-            checklistObject.xmlVersion = root.attrib.get(const.DSEDOC_ATTRIB_VERSION)
-            checklistObject.wordVersion = version
-            if Resources.validVersions(version, checklistObject.xmlVersion):
-                for elem in root:
-                    if isWordTypeTable(elem):
-                        checklistObject.addElement(elem.tag, parseTable(elem, checklistDocument))
-
-                #if const.CHECKLIST_ATTRIB_TITLE in checklistObject.elementList:
-                 #   checklistObject.wordVersion = checklistObject.elementList[const.CHECKLIST_ATTRIB_TITLE][const.CHECKLIST_ATTRIB_VERSION]
-            else:
-                log.warn("No valid versions! Processing skipped!")
     else:
         log.error("Processing of Template skipped! Please check Error log!")
         checklistObject = None

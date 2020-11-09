@@ -2,7 +2,8 @@ from pkg_resources import resource_filename
 import wx
 
 class Resources:
-    templatePath = "/templates"
+    inputTemplatePath = "/templates/input"
+    outputTemplatePath = "/templates/output"
     outputPath = "/output"
     configPath = "/config"
     inputPath = "/test/data/input/"
@@ -10,11 +11,7 @@ class Resources:
     logPath = "/log"
     configFile = "config.ini"
     headerImage = "header.png"
-    dseTemplate = "dse_template_v.xml"
-    youtubeTemplate = "youtube_template_v.xml"
-    facebookTemplate = "facebook_template_v.xml"
-    instagramTemplate = "instagram_template_v.xml"
-    twitterTemplate = "twitter_template_v.xml"
+    
     checklistTemplate = "checkliste_template_v.xml"
     logFile = "DSEGenerator.log"
     dsbList = "/data/datenschutzbehoerden.xml"
@@ -32,18 +29,16 @@ class Resources:
         return Resources.get_filename(Resources.dsbList)
 
     @staticmethod
-    def getDSETemplate(template = dseTemplate, version = "1.0"):
-        """getDSETemplate 
-        returns the filename of DSE Template for corresponding version.
+    def getOutputTemplate(template):
+        """getOutputTemplate 
+        returns the filename of XML Template for corresponding version.
         
-        Keyword Arguments:
-            version {str} -- [description] (default: {"1.0"})
         """
-        return Resources.get_filename(Resources.templatePath + "/" + Resources.getVersion(template, version))
+        return Resources.get_filename(Resources.outputTemplatePath + "/" + template)
 
     @staticmethod
-    def getChecklisteTemplate(version = "1.0"):
-        return Resources.get_filename(Resources.templatePath + "/" + Resources.getVersion(Resources.checklistTemplate, version))
+    def getChecklisteTemplate(template = "dse_erfassungsbogen_v1.0"):
+        return Resources.get_filename(Resources.inputTemplatePath + "/" + template + ".xml")
 
     @staticmethod
     def get_filename(path):

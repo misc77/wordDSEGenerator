@@ -12,6 +12,7 @@ import toolbox
 
 from docx import Document
 from docx.shared import Pt
+from docx.enum.text import WD_ALIGN_PARAGRAPH
 from resources import Resources
 
 class DocGenerator:
@@ -20,29 +21,29 @@ class DocGenerator:
    
     def __init__(self, checklist, name):
         self.checklistObject = checklist
-        self.dseTemplate = {}
-        self.dseDocument = None
+        self.outputTemplate = {}
+        self.outputDocument = None
         self.processed = False
         self.name = name
 
     def applyDocFormatting(self):
-        style = self.dseDocument.styles['Normal']
+        style = self.outputDocument.styles['Normal']
         font = style.font
         font.name = "Arial"
         font.size = Pt(12)
 
-        style = self.dseDocument.styles['Heading 1']
+        style = self.outputDocument.styles['Heading 1']
         font = style.font
         font.name = "Arial"
         font.size = Pt(16)
 
-        style = self.dseDocument.styles['Heading 2']
+        style = self.outputDocument.styles['Heading 2']
         font = style.font
         font.name = "Arial"
         font.size = Pt(14)
         font.bold = True
 
-        style = self.dseDocument.styles['Heading 3']
+        style = self.outputDocument.styles['Heading 3']
         font = style.font
         font.name = "Arial"
         font.size = Pt(12)
@@ -127,10 +128,11 @@ class DocGenerator:
                 if text != "": 
                     # Print header only if there is content to print
                     if is_first_paragraph == True and is_first == True and chapter_title != "":
-                        self.dseDocument.add_heading(chapter_title, level=1)
+                        self.outputDocument.add_heading(chapter_title, level=1)
                     if is_first and title != "":    
-                        self.dseDocument.add_heading(title, level=2)
-                    self.dseDocument.add_paragraph(text)
+                        self.outputDocument.add_heading(title, level=2)
+                    paragraph = self.outputDocument.add_paragraph(text)
+                    paragraph.alignment = WD_ALIGN_PARAGRAPH.LEFT
                     is_first = False
 
 
@@ -143,9 +145,9 @@ class DocGenerator:
                 is_first_paragraph = False
 
 
-    def parseTemplate(self, template, version = "1.0"):
+    def parseTemplate(self, template):
         log = logger.getLoggerCtx("DSEGenerator.docGenerator.parseTemplate")
-        filename = Resources.getDSETemplate(template, version)
+        filename = Resources.getOutputTemplate(template)
         try:
             tree = ET.parse(filename)   
         except(ET.ParseError):
@@ -153,33 +155,30 @@ class DocGenerator:
             log.error("Error occured when parsing XML document '" + filename + "'! " + ET.ParseError.text)
         if tree is not None:
             root = tree.getroot()
-            if Resources.validVersions(self.checklistObject.xmlVersion, root.attrib.get(const.DSEDOC_ATTRIB_VERSION)):
-                self.dseDocument = Document()
-                core_properties = self.dseDocument.core_properties
-                core_properties.comments = "Checklist Version:" + self.checklistObject.wordVersion + ", Checklist Template Version: " + self.checklistObject.xmlVersion + ", DSE Document Template Version: " + root.attrib.get(const.DSEDOC_ATTRIB_VERSION)
-                self.applyDocFormatting()
-                for elem in root:
-                    if elem.tag == const.DSEDOC_TAG_CHAPTER:
-                        self.processChapter(elem)
-                year = datetime.date.today().strftime("%Y")
+            self.outputDocument = Document()
+            core_properties = self.outputDocument.core_properties
+            self.outputTemplate = template
+            core_properties.comments = "Input Template:" + self.checklistObject.template + ",  Output Template: " + template
+            self.applyDocFormatting()
+            for elem in root:
+                if elem.tag == const.DSEDOC_TAG_CHAPTER:
+                    self.processChapter(elem)
+            year = datetime.date.today().strftime("%Y")
 
-                self.dseDocument.add_paragraph("@ " + year + " netvocat GmbH")
-                self.processed = True 
-            else:
-                log.warning("Processing skipped because of invalid versions between Checklist template XML and DSE template XML!! ")
-
+            self.outputDocument.add_paragraph("@ " + year + " netvocat GmbH")
+            self.processed = True 
 
     def saveDocument(self, versionnumber=1, path=None, now = datetime.datetime.now().strftime("%Y%m%d%H%M%S")):
         log = logger.getLoggerCtx("DSEGenerator.docGenerator.saveDocument")
         if path is None or len(path)==0:
-            filename = Resources.getOutputPath() + "/" + now + "_" + self.name + "_" + versionnumber+".docx"  
+            filename = Resources.getOutputPath() + "/" + now + "_" + self.outputTemplate[:-4] + ".docx"  
         else:
-            filename = path  + "/" + now + "_" + self.name + "_" + versionnumber+".docx"  
+            filename = path  + "/" + now + "_" + self.outputTemplate[:-4] +".docx"  
         try:
-            self.dseDocument.save(filename)
+            self.outputDocument.save(filename)
         except (PermissionError):
             log.warning("File '" + filename + "' could not be written! " + PermissionError.strerror)
-            filename = Resources.getOutputPath() + "/" + now +  "_" + self.name + "_" + (versionnumber+1)+".docx"  
+            filename = Resources.getOutputPath() + "/" + now +  "_" + self.outputTemplate[:-4] +".docx"  
             self.saveDocument(filename)
 
         if os.path.isfile(filename):

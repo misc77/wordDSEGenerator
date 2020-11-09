@@ -3,21 +3,46 @@ import const
 from datetime import date
 from filter import Filter
 
+class OutputDoc:
+    def __init__ (self, name, template, cond ):
+        self.template = template
+        self.cond = cond 
+        self.name = name
+    
+    def setDoc( self, name, template, cond):
+        self.template = template
+        self.name = name
+        self.cond = cond
+
+    def getTemplate(self):
+        return self.template
+
+    def getName(self):
+        return self.name
+    
+    def getCond(self):
+        return self.cond
+
 class XMLObject:
         
     def __init__ (self):
         self.elementList = {}
-        self.wordVersion = ""
-        self.xmlVersion = ""
+        self.template = ""
         self.created = date.today()
         self.filter = Filter()
+        self.outputDocs = []
 
     def __str__ (self):
         stringRepresentation = "created: " + str(self.created) + " \n"
-        stringRepresentation += "wordVersion: " + self.wordVersion + " \n"
-        stringRepresentation += "xmlVersion: " + self.xmlVersion + " \n"
+        stringRepresentation += "template: " + self.template + " \n"
         stringRepresentation += "content: " + str(self.elementList)
         return stringRepresentation        
+
+    def setTemplate(self, template):
+        self.template = template
+
+    def getTemplate(self):
+        return self.template
 
     def setElementList(self, elementList):
         self.elementList = elementList
@@ -26,7 +51,14 @@ class XMLObject:
         self.elementList[elementName] = element
 
     def addElementEntry(self, elementName, key, value):
-        self.elementList[elementName][key] = value 
+        self.elementList[elementName][key] = value
+    
+    def addOutputDoc(self, name, template, cond):
+        doc = OutputDoc(name, template, cond)
+        self.outputDocs.append(doc)
+
+    def getOutputDocs(self):
+        return self.outputDocs
       
     def getElement(self, elementName):
         return self.elementList[elementName]

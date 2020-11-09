@@ -12,10 +12,10 @@ from dsblist import DSBList
 
 class DSEGeneratorApp(wx.Frame):
     """DSEGeneratorApp
-    Generates DSE Documents based on Checklists in Word format. 
-    To Parse Checklists a specific template in XML format is necessary.
-    Generation of DSE Document is done based on XML Template for mapping
-    Checklist values to text blocks
+    Generates Documents based on Input documents in Word format. 
+    To Parse input documents a specific template in XML format is necessary.
+    Generation of output Document is done based on XML Template for mapping
+    input document values to text blocks
     
     Arguments:
         wx {[Frame]} -- [description]
@@ -34,11 +34,12 @@ class DSEGeneratorApp(wx.Frame):
         self.log_scheduler.add_job(self.log_update, 'interval', seconds=10, id='log_job')
         self.log_scheduler.start() 
         self.view_show_log_item = None
-        self.ui_width = 880
+        self.ui_width = 1100
         self.ui_height_min = 500
         self.ui_height_max = 700  
         self.init_ui()   
-        self.SetBackgroundColour("white")       
+        self.SetBackgroundColour("white")
+        self.path = Resources.getOutputPath();       
     
     def init_ui(self):
         """[summary]
@@ -74,19 +75,13 @@ class DSEGeneratorApp(wx.Frame):
         file_picker.SetTextCtrlProportion(10)
         self.sizer.Add(file_picker, pos=(2,1), span=(1,2), flag=wx.EXPAND|wx.LEFT|wx.RIGHT,border=self.border)
 
-        #Version of Document selected
-        version_label = wx.StaticText(self.panel, label="Checklist Word-Document Version:")
-        version_label.SetFont(font)
-        self.sizer.Add(version_label, pos=(3,0), flag=wx.LEFT|wx.RIGHT|wx.ALIGN_CENTER_VERTICAL, border=self.border)
-        self.version_text = wx.StaticText(self.panel)
-        self.version_text.SetFont(font)
-        self.sizer.Add(self.version_text, pos=(3,1),  flag=wx.EXPAND|wx.LEFT|wx.RIGHT, border=self.border)
-        version_label_xml = wx.StaticText(self.panel, label="Checklist XMLTemplate Version:")
+        #Used Template of Document selected
+        version_label_xml = wx.StaticText(self.panel, label="Used Input XMLTemplate:")
         version_label_xml.SetFont(font)
         self.sizer.Add(version_label_xml, pos=(4,0), flag=wx.LEFT|wx.RIGHT|wx.ALIGN_CENTER_VERTICAL, border=self.border)
-        self.version_text_xml = wx.StaticText(self.panel)
-        self.version_text_xml.SetFont(font)
-        self.sizer.Add(self.version_text_xml, pos=(4,1),  flag=wx.EXPAND|wx.LEFT|wx.RIGHT, border=self.border)
+        self.template_text_xml = wx.StaticText(self.panel)
+        self.template_text_xml.SetFont(font)
+        self.sizer.Add(self.template_text_xml, pos=(4,1),  flag=wx.EXPAND|wx.LEFT|wx.RIGHT, border=self.border)
         self.sizer.Add(self.line, pos=(6,0), span=(1,3), flag=wx.EXPAND|wx.LEFT|wx.RIGHT, border=self.border)
 
         #Status
@@ -154,13 +149,10 @@ class DSEGeneratorApp(wx.Frame):
             self.generator.checklistFile = evt.GetPath()
             checklist_doc = parseChecklist(self.generator.checklistFile)
             self.generator.checklistObject = checklist_doc
-            if checklist_doc.wordVersion != None:
-                self.version_text.SetLabelText(checklist_doc.wordVersion.strip("\n"))
-                self.version_text_xml.SetLabelText(checklist_doc.xmlVersion)
-                self.status_text.SetLabelText("Checklist Document successfully processed!")      
-                self.generate_button.Enable()          
-            else:
-                self.status_text.SetLabelText("Error during processing! Please refer to log for details!")
+            self.template_text_xml.SetLabelText(self.generator.checklistObject.getTemplate())
+
+            self.status_text.SetLabelText("Checklist Document successfully processed!")      
+            self.generate_button.Enable()          
         else:
             wx.MessageBox("Warning! No file has been selected! Please select a valid file in order to proceed!")
             log.warning("No file has been selected!")
@@ -174,7 +166,7 @@ class DSEGeneratorApp(wx.Frame):
         log = logger.getLogger()
         log.info("Button pushed")
         if self.generator.checklistObject != None:
-            self.generate_dse_document()
+            self.generate_output()
         else:
             wx.MessageBox("Warning! DSE Document can't be generated because of missing or incomplete parsed Checklist Document!", caption="Warning!")
             log.warning("No checklist has been parsed! Please select a valid checklist document!")
@@ -211,13 +203,16 @@ class DSEGeneratorApp(wx.Frame):
             evt {[type]} -- [description]
         """
         if self.docList is not None and len(self.docList) > 0:
+            count = 0
             dlg = wx.DirDialog(self, "Please select destination directory to save generated document(s)!", Resources.getOutputPath(), wx.DD_DEFAULT_STYLE | wx.DD_DIR_MUST_EXIST)
             now = datetime.datetime.now().strftime("%Y%m%d%H%M%S") 
             if dlg.ShowModal() == wx.ID_OK:
-                path = dlg.GetPath()
+                self.path = dlg.GetPath()
                 for doc in self.docList:
-                    if doc.saveDocument(self.version_text_xml.GetLabelText(), path, now):
-                        self.status_text.SetLabelText(doc.name + " saved successfully!")      
+                    if doc.saveDocument(self.template_text_xml.GetLabelText(), self.path, now):
+                        count = count + 1
+                        self.status_text.SetLabelText(doc.name + " saved successfully!")   
+                self.status_text.SetLabelText("All " + str(count) + " documents saved successfully!")   
             else:
                 wx.MessageBox("Warning! DSE Document hasn't been saved!", caption="Warning!")
         else:
@@ -252,46 +247,24 @@ class DSEGeneratorApp(wx.Frame):
         self.log_view.Refresh()
         file_handle.close()
 
-    def generate_dse_document(self):
+    def generate_output(self):
         """ Generates DSE Document by 
         """
         #TODO: Implement concurrency!!
+        count = 0
+        self.status_text.SetLabelText("Output Document(s) are being processed...")
         
-        self.status_text.SetLabelText("DSE Document is being processed...")
-        # Main DSE Document
-        doc = DocGenerator(self.generator.checklistObject, "Main_DSE")
-        doc.parseTemplate(Resources.dseTemplate, self.version_text_xml.GetLabelText())
-        self.docList.append(doc)                             
-        self.status_text.SetLabelText("Main DSE Document successfully processed!")
-        
-        #YoutTube DSE Document
-        if self.generator.checklistObject != None and toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'YouTube'):
-            doc = DocGenerator(self.generator.checklistObject, "YouTube_DSE")
-            doc.parseTemplate(Resources.youtubeTemplate, self.version_text_xml.GetLabelText())
-            self.docList.append(doc)
-            self.status_text.SetLabelText("YouTube DSE Document successfully processed!")
+        if self.generator.checklistObject != None:
+            for output in self.generator.checklistObject.getOutputDocs():
+                if output.getCond() == "" or eval(output.getCond()):
+                    doc = DocGenerator(self.generator.checklistObject, output.getName())
+                    doc.parseTemplate(output.getTemplate())
+                    self.docList.append(doc)
+                    count = count +1
+                    self.status_text.SetLabelText(output.getName() +" successfully processed!")
 
-        #Facebook DSE Document
-        if self.generator.checklistObject != None and toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'Facebook'):
-            doc = DocGenerator(self.generator.checklistObject, "Facebook_DSE")
-            doc.parseTemplate(Resources.facebookTemplate, self.version_text_xml.GetLabelText())
-            self.docList.append(doc)
-            self.status_text.SetLabelText("Facebook DSE Document successfully processed!")
+        self.status_text.SetLabelText(str(count) + " documents processed ! Ready to save to disc.")    
 
-        #Instagram DSE Document
-        if self.generator.checklistObject != None and toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'Instagram'):
-            doc = DocGenerator(self.generator.checklistObject, "Instagram_DSE")
-            doc.parseTemplate(Resources.instagramTemplate, self.version_text_xml.GetLabelText())
-            self.docList.append(doc)
-            self.status_text.SetLabelText("Instagram DSE Document successfully processed!")
-        
-        #Twitter DSE Document
-        if self.generator.checklistObject != None and toolbox.contains(self.generator.checklistObject.elementList['socialMedia']['praesenzen'], 'Twitter'):
-            doc = DocGenerator(self.generator.checklistObject, "Twitter_DSE")
-            doc.parseTemplate(Resources.twitterTemplate, self.version_text_xml.GetLabelText())
-            self.docList.append(doc)
-            self.status_text.SetLabelText("Twitter DSE Document successfully processed!")
-            
         self.save_button.Enable()     
 
     def reset(self):
