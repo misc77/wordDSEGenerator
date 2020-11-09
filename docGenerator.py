@@ -153,6 +153,10 @@ class DocGenerator:
         except(ET.ParseError):
             tree = None
             log.error("Error occured when parsing XML document '" + filename + "'! " + ET.ParseError.text)
+        except(FileNotFoundError):
+            tree = None
+            log.error("Error when trying to access XML document '" + filename + "'! ")
+            
         if tree is not None:
             root = tree.getroot()
             self.outputDocument = Document()

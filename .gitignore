@@ -15,7 +15,6 @@ downloads/
 eggs/
 .eggs/
 lib64/
-output/
 parts/
 sdist/
 var/
@@ -99,7 +98,6 @@ venv.bak/
 
 # mkdocs documentation
 /site
-/output
 
 # mypy
 .mypy_cache/

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<checkliste xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Datenschutzerklärung" version="1.0">
+    <input>
+        <titel wordType="table" tabelle="1">
+                <intro></intro>
+                <titel></titel>
+                <version spalte="1"></version>
+                <addresse spalte="1"></addresse>
+        </titel>
+        <mandant wordType="table" tabelle="2">
+                <titel wordType="text"></titel>
+                <adresse spalte="2" wordType="text"> </adresse>
+        </mandant>
+        <ausgestaltung wordType="table" tabelle="3">
+                <titel wordType="text"></titel>
+                <hinweis wordType="text"></hinweis>
+                <optionen wordType="checkboxlist"/>
+        </ausgestaltung>
+    </input>
+    <output>
+        <doc name="angebot" template="angebot_mandant_template_v1.0.xml" cond=""/>
+    </output>
+</checkliste>

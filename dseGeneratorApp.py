@@ -2,6 +2,7 @@ import configProvider
 import logger
 import wx
 import toolbox
+import os.path
 import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
 from dseGenerator import DSEGenerator
@@ -46,7 +47,7 @@ class DSEGeneratorApp(wx.Frame):
            Generates the UI of the Application
         """ 
         self.SetSize((self.ui_width, self.ui_height_max))
-        self.SetTitle("DSEGenerator Application")
+        self.SetTitle("Document Generator Application")
         self.Centre()
         self.panel = wx.Panel(self)
         self.sizer = wx.GridBagSizer(3,16)
@@ -62,7 +63,7 @@ class DSEGeneratorApp(wx.Frame):
         self.sizer.Add(imageSizer, pos=(0,0), span=(1, 3), flag=wx.TOP|wx.LEFT|wx.RIGHT)
         
         #Checklist Label
-        checklist_label = wx.StaticText(self.panel, label="Checklist Document:")
+        checklist_label = wx.StaticText(self.panel, label="Input Document:")
         font = checklist_label.GetFont()
         font.PointSize += 2
         font = font.Bold()
@@ -70,7 +71,7 @@ class DSEGeneratorApp(wx.Frame):
         self.sizer.Add(checklist_label, pos=(2,0), flag=wx.LEFT|wx.RIGHT|wx.ALIGN_CENTER_VERTICAL, border=self.border)
         
         #FileDialog Button
-        file_picker = wx.FilePickerCtrl(self.panel, path=Resources.getInputPath(), message="Please select a Checklist Document in *.docx Format:", wildcard="*.docx", style = wx.FLP_USE_TEXTCTRL )
+        file_picker = wx.FilePickerCtrl(self.panel, path=Resources.getInputPath(), message="Please select a Input Document in *.docx Format:", wildcard="*.docx", style = wx.FLP_USE_TEXTCTRL )
         file_picker.SetTextCtrlGrowable(True)
         file_picker.SetTextCtrlProportion(10)
         self.sizer.Add(file_picker, pos=(2,1), span=(1,2), flag=wx.EXPAND|wx.LEFT|wx.RIGHT,border=self.border)
@@ -93,12 +94,12 @@ class DSEGeneratorApp(wx.Frame):
         self.sizer.Add(self.status_text, pos=(7,1), flag=wx.EXPAND|wx.LEFT|wx.RIGHT, border=self.border)
             
         #Buttons
-        self.generate_button = wx.Button(self.panel, label="Generate DSE document!", name="generate")
+        self.generate_button = wx.Button(self.panel, label="Generate output document!", name="generate")
         self.generate_button.Disable()
         self.sizer.Add(self.generate_button, pos=(9,0), flag=wx.LEFT|wx.ALIGN_CENTER_VERTICAL, border=self.border)
         self.Bind(wx.EVT_BUTTON, self.on_generate, self.generate_button)
         
-        self.save_button = wx.Button(self.panel, label="Save DSE Document!", name="save")
+        self.save_button = wx.Button(self.panel, label="Save output Document!", name="save")
         self.save_button.Disable()
         self.sizer.Add(self.save_button, pos=(9,1), flag=wx.LEFT|wx.ALIGN_CENTER_VERTICAL, border=self.border)
         self.Bind(wx.EVT_BUTTON, self.on_save, self.save_button)
@@ -147,12 +148,17 @@ class DSEGeneratorApp(wx.Frame):
         self.reset()
         if evt.GetPath() != None:
             self.generator.checklistFile = evt.GetPath()
-            checklist_doc = parseChecklist(self.generator.checklistFile)
-            self.generator.checklistObject = checklist_doc
-            self.template_text_xml.SetLabelText(self.generator.checklistObject.getTemplate())
-
-            self.status_text.SetLabelText("Checklist Document successfully processed!")      
-            self.generate_button.Enable()          
+            if os.path.isfile(self.generator.checklistFile):
+                checklist_doc = parseChecklist(self.generator.checklistFile)
+                if checklist_doc != None:
+                    self.generator.checklistObject = checklist_doc
+                    self.template_text_xml.SetLabelText(self.generator.checklistObject.getTemplate())
+                    self.status_text.SetLabelText("Input Document successfully processed!")      
+                    self.generate_button.Enable()    
+                else:
+                    self.status_text.SetLabelText("Input document could not be parsed! Please check input file!")
+            else:
+               self.status_text.SetLabelText("Input document could not be parsed! File '" + self.generator.checklistFile + "' does not exist!")       
         else:
             wx.MessageBox("Warning! No file has been selected! Please select a valid file in order to proceed!")
             log.warning("No file has been selected!")
@@ -168,7 +174,7 @@ class DSEGeneratorApp(wx.Frame):
         if self.generator.checklistObject != None:
             self.generate_output()
         else:
-            wx.MessageBox("Warning! DSE Document can't be generated because of missing or incomplete parsed Checklist Document!", caption="Warning!")
+            wx.MessageBox("Warning! Output Document can't be generated because of missing or incomplete parsed Input Document!", caption="Warning!")
             log.warning("No checklist has been parsed! Please select a valid checklist document!")
 
     def on_exit(self, evt):
@@ -213,10 +219,11 @@ class DSEGeneratorApp(wx.Frame):
                         count = count + 1
                         self.status_text.SetLabelText(doc.name + " saved successfully!")   
                 self.status_text.SetLabelText("All " + str(count) + " documents saved successfully!")   
+                count = 0
             else:
-                wx.MessageBox("Warning! DSE Document hasn't been saved!", caption="Warning!")
+                wx.MessageBox("Warning! Output Document hasn't been saved!", caption="Warning!")
         else:
-            wx.MessageBox("Warning! DSE Document has not yet generated! Please Generate DSE Document when Checklist has been read successfully!", caption="Warning!")  
+            wx.MessageBox("Warning! Output Document has not yet generated! Please Generate output document when Input document has been read successfully!", caption="Warning!")  
 
     #--- End of Event Handler
 
@@ -264,7 +271,7 @@ class DSEGeneratorApp(wx.Frame):
                     self.status_text.SetLabelText(output.getName() +" successfully processed!")
 
         self.status_text.SetLabelText(str(count) + " documents processed ! Ready to save to disc.")    
-
+        count = 0
         self.save_button.Enable()     
 
     def reset(self):
@@ -272,6 +279,8 @@ class DSEGeneratorApp(wx.Frame):
         """
         self.generate_button.Disable()
         self.save_button.Disable()
+        self.generator = DSEGenerator()
+        self.docList = []
 
 def main():
     """Main Method
